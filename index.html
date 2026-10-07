@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Athens Vet Clinic · Πώς δουλεύει μια νοσηλεία</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0..1,0&display=block" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF3F4; --card:#FFFFFF; --soft:#F3F7F8; --line:#DCE6E8;
+  --ink:#17324F; --ink2:#41566C; --muted:#6F8191;
+  --navy:#1D3F72; --navy2:#2C5E9E; --navy-ink:#FFFFFF;
+  --coral:#0E7C7B; --coral-soft:#DCEFEE; --pink:#BFE3E1;
+  --green:#2E9A5E; --green-soft:#E1F3E8;
+  --amber:#93570A; --amber-soft:#FCEFD6;
+  --red:#C62D4A; --red-soft:#FDE2E7;
+  --blue:#2F5DB8; --blue-soft:#E4ECFA;
+  --frame:#14132B;
+  --shadow:0 1px 2px rgba(36,34,92,.06),0 10px 28px rgba(36,34,92,.08);
+  --f-title:'Comfortaa','Manrope',system-ui,sans-serif;
+  --f-body:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1A22; --card:#172631; --soft:#1E313D; --line:#2A3F4C;
+    --ink:#E6F0F2; --ink2:#BBCDD3; --muted:#8FA4AD;
+    --navy:#1C3B66; --navy2:#2F5F98; --coral:#3BB3AE;
+    --coral-soft:#123B3B; --pink:#1D4B4A; --green-soft:#143826; --amber:#F0B45C; --amber-soft:#3C2E14;
+    --red:#FF7A92; --red-soft:#47202D; --blue:#8FB0FF; --blue-soft:#1F2C4D; --frame:#05050E;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 28px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1A22; --card:#172631; --soft:#1E313D; --line:#2A3F4C;
+  --ink:#E6F0F2; --ink2:#BBCDD3; --muted:#8FA4AD;
+  --navy:#1C3B66; --navy2:#2F5F98; --coral:#3BB3AE;
+  --coral-soft:#123B3B; --pink:#1D4B4A; --green-soft:#143826; --amber:#F0B45C; --amber-soft:#3C2E14;
+  --red:#FF7A92; --red-soft:#47202D; --blue:#8FB0FF; --blue-soft:#1F2C4D; --frame:#05050E;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);overflow-x:hidden;touch-action:manipulation;-webkit-text-size-adjust:100%}
+body{overflow-x:hidden;overscroll-behavior-x:none;width:100%;overflow-wrap:break-word;margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+input,textarea{font:inherit;font-size:16px;color:var(--ink)}
+:focus-visible{outline:3px solid var(--coral);outline-offset:2px;border-radius:10px}
+.ms{font-family:'Material Symbols Rounded';font-weight:500;font-style:normal;font-size:22px;line-height:1;display:inline-block;vertical-align:middle;letter-spacing:normal;text-transform:none;white-space:nowrap;direction:ltr;-webkit-font-feature-settings:'liga';font-feature-settings:'liga';font-variation-settings:'FILL' 0}
+.ms.fill{font-variation-settings:'FILL' 1}
+.ms{width:1em;overflow:hidden;flex:0 0 auto}
+html:not(.ms-ready) .ms{color:transparent!important}
+h1,h2,h3{font-family:var(--f-title);font-weight:600;color:var(--ink);margin:0;letter-spacing:-.01em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+
+/* ---------- brand ---------- */
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{font-family:var(--f-body);font-weight:800;font-size:30px;line-height:1.05;color:var(--navy);letter-spacing:-.02em}
+:root[data-theme="dark"] .brand-mark{color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .brand-mark{color:#fff}}
+.brand-sub{font-family:var(--f-body);font-weight:700;font-size:13px;color:var(--coral);margin-top:3px}
+.brand-paw{width:44px;height:44px;border-radius:14px;background:var(--coral);color:#fff;display:grid;place-items:center}
+
+/* ---------- home ---------- */
+#home{padding-top:22px;padding-bottom:60px}
+.home-title{font-size:clamp(26px,4.4vw,40px);line-height:1.15;margin:16px 0 12px;max-width:760px}
+.ver{display:inline-block;background:var(--coral);color:#fff;font-weight:700;font-size:14px;padding:5px 12px;border-radius:10px}
+.free{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:20px 0}
+.free-l{color:var(--muted);font-weight:500}
+.pill-btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;border-radius:16px;background:var(--card);border:1.5px solid var(--line);font-weight:600;color:var(--ink)}
+.pill-btn:active{transform:scale(.97)}
+.hero{background:var(--card);border-radius:28px;padding:26px;box-shadow:var(--shadow);max-width:760px}
+.hero h2{font-size:clamp(22px,3.2vw,30px);line-height:1.2;margin-bottom:12px}
+.hero p{color:var(--ink2);margin:0 0 20px;font-size:17px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;width:100%;border-radius:18px;font-weight:600;font-size:17px;font-family:var(--f-title)}
+.btn+.btn{margin-top:10px}
+.btn-coral{background:var(--coral);color:#fff}
+.btn-line{background:var(--card);border:1.5px solid var(--line);color:var(--ink)}
+.btn:active{transform:scale(.98)}
+.people{display:flex;align-items:flex-start;justify-content:space-between;max-width:760px;margin:26px 0 8px;padding:0 4px}
+.person{display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 0 auto;width:88px}
+.person .av{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:#fff}
+.person .av .ms{font-size:30px}
+.person b{font-family:var(--f-title);font-weight:600;margin-top:8px;font-size:15px}
+.person small{color:var(--muted);font-size:13px}
+.people .link{flex:1;height:6px;border-radius:3px;background:var(--line);margin-top:30px}
+.sec-title{font-size:24px;margin:44px 0 6px}
+.sec-sub{color:var(--muted);margin:0 0 18px}
+.role-grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.role-card{background:var(--card);border-radius:22px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+.role-card .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;color:#fff}
+.role-card h3{font-size:18px}
+.role-card p{margin:0;color:var(--ink2);font-size:15px;flex:1}
+.role-card button{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;color:var(--coral);font-weight:700;min-height:44px}
+.decide-card{background:var(--amber-soft);border-radius:22px;padding:20px;max-width:760px;margin-top:30px}
+.decide-card h3{font-size:17px;color:var(--amber);display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.decide-card p{margin:0;color:var(--ink2);font-size:15px}
+.tag-prop{display:inline-flex;align-items:center;gap:4px;background:var(--amber-soft);color:var(--amber);font-weight:700;font-size:11.5px;padding:2px 8px;border-radius:8px;vertical-align:middle;white-space:nowrap}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;gap:12px;min-height:66px}
+.back-btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);font-weight:600;white-space:nowrap}
+.tb-title{font-family:var(--f-title);font-weight:600;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+
+/* ---------- tour ---------- */
+#tour{padding-top:18px;padding-bottom:120px}
+.tour-grid{display:grid;gap:22px;align-items:start}
+@media (min-width:1080px){.tour-grid{grid-template-columns:380px 1fr}.stepcard{position:sticky;top:90px}}
+.stepcard{background:var(--card);border-radius:26px;padding:22px;box-shadow:var(--shadow)}
+.step-n{color:var(--muted);font-size:15px;margin-bottom:4px}
+.stepcard h2{font-size:24px;line-height:1.22;margin-bottom:14px}
+.sc-h{color:var(--coral);font-weight:800;font-size:15px;margin:14px 0 4px}
+.stepcard p{margin:0;color:var(--ink);font-size:16px}
+.try{background:var(--soft);border-radius:18px;padding:14px 16px;margin-top:6px;font-size:15.5px}
+.decide{background:var(--amber-soft);color:var(--ink);border-radius:16px;padding:12px 14px;margin-top:14px;font-size:14.5px}
+.decide b{color:var(--amber)}
+.goto-dev{margin-top:16px}
+@media (min-width:1080px){.goto-dev{display:none}}
+.dots{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.dots button{width:10px;height:10px;border-radius:50%;background:var(--line);padding:0}
+.dots button.on{background:var(--coral);width:22px;border-radius:6px}
+.dots button.seen{background:var(--pink)}
+
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;align-items:center}
+.ctl{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:14px;background:var(--card);border:1.5px solid var(--line);font-weight:600;font-size:15px}
+.ctl.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ctl.coral{background:var(--coral);color:#fff;border-color:var(--coral)}
+.clock{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--ink2);padding:0 6px;font-variant-numeric:tabular-nums}
+
+.device{margin:0 auto;background:var(--frame);padding:12px;box-shadow:0 30px 60px -20px rgba(20,19,43,.45);transition:max-width .25s ease}
+.device.tablet{max-width:880px;border-radius:36px}
+.device.phone{max-width:400px;border-radius:50px}
+.screen{position:relative;height:min(80vh,800px);min-height:560px;overflow:hidden;background:var(--bg);container-type:inline-size;overscroll-behavior:contain}
+@media (max-width:600px){.device,.device.phone,.device.tablet{max-width:none;padding:0;background:none;box-shadow:none;border-radius:0}.device .screen,.device.phone .screen,.device.tablet .screen{border-radius:22px;border:1px solid var(--line);height:calc(100svh - 230px);min-height:500px}.controls .seg{display:none}#tour{padding-left:12px;padding-right:12px}}
+.device.tablet .screen{border-radius:26px}
+.device.phone .screen{border-radius:40px}
+
+.tournav{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--card);border-top:1px solid var(--line);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px))}
+.tournav .wrap{display:flex;gap:12px;padding:0}
+.tournav .btn{margin:0;min-height:54px}
+.tournav .btn+.btn{margin:0}
+/* ================= APP (inside the device) ================= */
+.app{position:absolute;inset:0;display:flex;flex-direction:column;font-size:15px}
+.a-head{flex:0 0 auto;display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--card);border-bottom:1px solid var(--line)}
+.a-logo{font-family:var(--f-body);font-weight:800;color:var(--navy);font-size:18px;letter-spacing:-.02em;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.a-logo .ms{color:var(--coral);font-size:22px}
+:root[data-theme="dark"] .a-logo{color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .a-logo{color:#fff}}
+.a-head .sp{flex:1}
+.bell{position:relative;width:44px;height:44px;border-radius:50%;background:var(--soft);display:grid;place-items:center}
+.bell .cnt{position:absolute;top:2px;right:0;min-width:20px;height:20px;padding:0 5px;border-radius:10px;background:var(--coral);color:#fff;font-size:12px;font-weight:800;display:grid;place-items:center}
+.bell.ping{animation:ping .9s ease 2}
+@keyframes ping{0%,100%{transform:rotate(0)}25%{transform:rotate(14deg)}75%{transform:rotate(-14deg)}}
+.me{display:flex;align-items:center;gap:8px;min-height:44px;padding:4px 10px 4px 4px;border-radius:24px;background:var(--soft);font-weight:700;font-size:14px}
+.me .ini{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:13px;font-weight:800}
+.me small{display:block;font-weight:500;color:var(--muted);font-size:11.5px;line-height:1.1}
+.me-txt{line-height:1.15;text-align:left}
+@container (max-width:420px){.me-txt{display:none}.a-logo{font-size:18px}}
+.a-body{flex:1;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;touch-action:pan-y;padding:14px 14px 24px;-webkit-overflow-scrolling:touch}
+.a-nav{flex:0 0 auto;display:flex;background:var(--card);border-top:1px solid var(--line);padding:6px 4px 8px}
+.a-nav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;min-height:54px;padding-top:6px;color:var(--muted);font-size:12px;font-weight:600;position:relative;border-top:3px solid transparent;margin-top:-7px}
+.a-nav button.on{color:var(--coral);border-top-color:var(--coral)}
+.a-nav button.on .ms{font-variation-settings:'FILL' 1}
+.a-nav .nb{position:absolute;top:2px;left:calc(50% + 6px);min-width:18px;height:18px;border-radius:9px;background:var(--coral);color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center;padding:0 4px}
+
+.card{background:var(--card);border-radius:20px;padding:16px;box-shadow:var(--shadow)}
+.card+.card{margin-top:12px}
+.h-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 2px 10px}
+.h-row h3{font-size:17px}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;border-radius:14px;background:var(--card);border:1.5px solid var(--line);font-weight:700;font-size:14px;white-space:nowrap}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.chip.late{background:var(--red-soft);border-color:transparent;color:var(--red)}
+.chip.late.on{background:var(--red);color:#fff}
+.seg{display:flex;background:var(--soft);border-radius:16px;padding:4px;gap:4px}
+.seg button{flex:1;min-width:0;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:normal;line-height:1.2;text-align:center;padding:4px 8px;min-height:40px;border-radius:12px;font-weight:700;font-size:14px;color:var(--muted)}
+.seg button.on{background:var(--card);color:var(--ink);box-shadow:0 1px 4px rgba(36,34,92,.12)}
+.tag{max-width:100%;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;padding:3px 9px;border-radius:9px;background:var(--soft);color:var(--ink2);white-space:nowrap}
+.tag .ms{font-size:15px}
+.tag.red{background:var(--red-soft);color:var(--red)}
+.tag.green{background:var(--green-soft);color:var(--green)}
+.tag.amber{background:var(--amber-soft);color:var(--amber)}
+.tag.blue{background:var(--blue-soft);color:var(--blue)}
+.tag.coral{background:var(--coral-soft);color:var(--coral)}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag.wrap{white-space:normal}
+@container (max-width:460px){.seg.four{display:grid;grid-template-columns:1fr 1fr}}
+
+/* now: summary */
+.sum{background:var(--navy);color:#fff;border-radius:22px;padding:18px;position:relative;overflow:hidden}
+.sum::after{content:"";position:absolute;right:-60px;top:-70px;width:200px;height:200px;border-radius:50%;background:var(--coral);opacity:.9}
+.sum>*{position:relative;z-index:1}
+.sum .k{font-size:13px;font-weight:700;color:#A9E4DF;display:flex;align-items:center;gap:6px}
+.sum .big{font-family:var(--f-title);font-size:30px;font-weight:700;margin:4px 0 2px}
+.sum .row{display:flex;gap:14px;flex-wrap:wrap;font-size:14px;color:#D9D8F2}
+.bar{height:8px;border-radius:4px;background:rgba(255,255,255,.18);margin-top:12px;overflow:hidden}
+.bar i{display:block;height:100%;background:#5FD3C9;border-radius:4px}
+
+.groups{display:grid;gap:14px;margin-top:14px}
+@container (min-width:700px){.groups{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}}
+.cols{display:grid;gap:12px}
+.group-h{display:flex;align-items:center;gap:8px;font-family:var(--f-title);font-weight:700;font-size:16px;margin:0 2px 8px}
+.group-h .ms{color:var(--coral)}
+.task{display:flex;align-items:center;gap:10px;background:var(--card);border-radius:18px;padding:12px 10px 12px 14px;box-shadow:var(--shadow);border-left:5px solid var(--line);margin-bottom:10px}
+.task.late{border-left-color:var(--red);background:color-mix(in srgb,var(--red-soft) 45%,var(--card))}
+.task.done{border-left-color:var(--green)}
+.task.notdone{border-left-color:#E08A2C}
+.t-time{font-weight:800;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;width:44px;flex:0 0 auto}
+.task.late .t-time{color:var(--red)}
+.t-main{flex:1;min-width:0}
+.t-title{font-weight:800;font-size:15px;line-height:1.25}
+.t-sub{color:var(--muted);font-size:13px;margin-top:1px}
+.t-note{margin-top:6px;font-size:12.5px;background:var(--amber-soft);color:var(--amber);border-radius:10px;padding:5px 9px;font-weight:600}
+.t-warn{margin-top:6px;font-size:12.5px;background:var(--red-soft);color:var(--red);border-radius:10px;padding:5px 9px;font-weight:700}
+.t-sign{margin-top:5px;font-size:12.5px;color:var(--green);font-weight:700;display:flex;align-items:center;gap:4px}
+.task.notdone .t-sign{color:var(--amber)}
+.t-act{display:flex;gap:6px;flex:0 0 auto}
+.tick{width:48px;height:48px;border-radius:16px;background:var(--soft);display:grid;place-items:center;color:var(--ink2)}
+.tick .ms{font-size:28px}
+.task.done .tick{background:var(--green);color:#fff}
+.task.late .tick{background:var(--red);color:#fff}
+.dots-btn{width:40px;height:48px;border-radius:14px;display:grid;place-items:center;color:var(--muted)}
+.stat{background:var(--red);color:#fff;border-radius:20px;padding:14px 14px 14px 16px;display:flex;align-items:center;gap:12px;margin-top:14px;box-shadow:0 10px 24px -10px rgba(198,45,74,.6)}
+.stat .t-sub{color:#FFD6DE}
+.stat .tick{background:#fff;color:var(--red)}
+.stat-l{font-family:var(--f-title);font-weight:700;font-size:12px;background:rgba(255,255,255,.2);padding:3px 8px;border-radius:8px;display:inline-block;margin-bottom:4px}
+.empty{text-align:center;color:var(--muted);padding:30px 10px}
+.empty .ms{font-size:40px;color:var(--green)}
+
+/* patients */
+.pgrid{display:grid;gap:12px}
+@container (min-width:640px){.pgrid{grid-template-columns:1fr 1fr}}
+.pcard{background:var(--card);border-radius:20px;padding:14px;box-shadow:var(--shadow);display:flex;gap:12px;text-align:left;width:100%;position:relative}
+.p-av{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;flex:0 0 auto;font-size:26px}
+.p-av.dog{background:var(--blue-soft)}
+.p-av.cat{background:var(--coral-soft)}
+.p-name{font-family:var(--f-title);font-weight:700;font-size:17px}
+.p-meta{color:var(--muted);font-size:13px;margin:1px 0 8px}
+.prog{height:6px;background:var(--soft);border-radius:3px;margin-top:10px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--green)}
+.reddot{position:absolute;top:14px;right:14px;width:12px;height:12px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px var(--red-soft)}
+.add-btn{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:14px;background:var(--coral);color:#fff;font-weight:700;font-size:14px}
+.search{display:flex;align-items:center;gap:8px;background:var(--card);border:1.5px solid var(--line);border-radius:16px;padding:0 12px;min-height:48px}
+.search input{border:0;background:none;outline:none;flex:1;min-width:0}
+.back-in{display:inline-flex;align-items:center;gap:4px;min-height:40px;font-weight:700;color:var(--coral);margin-bottom:6px}
+.p-head{display:flex;gap:14px;align-items:center}
+.p-head .p-av{width:64px;height:64px;font-size:32px;border-radius:20px}
+.p-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.ghost{display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:0 13px;border-radius:13px;background:var(--soft);font-weight:700;font-size:14px}
+.ghost.coral{background:var(--coral-soft);color:var(--coral)}
+.ghost.green{background:var(--green-soft);color:var(--green)}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0 12px}
+.pills::-webkit-scrollbar{display:none}
+.pills button{flex:0 0 auto;min-height:40px;padding:0 14px;border-radius:20px;font-weight:700;font-size:14px;background:var(--card);border:1.5px solid var(--line)}
+.pills button.on{background:var(--coral);border-color:var(--coral);color:#fff}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;font-weight:600}
+.order{background:var(--card);border-radius:18px;padding:14px;box-shadow:var(--shadow);margin-bottom:10px}
+.order.off{opacity:.62}
+.o-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.o-name{font-weight:800;font-size:15.5px}
+.o-sub{color:var(--ink2);font-size:13.5px;margin-top:2px}
+.o-act{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.grid-wrap{overflow:hidden;margin-bottom:12px;background:var(--card);border-radius:18px;box-shadow:var(--shadow)}
+table.vg{border-collapse:collapse;font-size:13px;width:100%;table-layout:fixed}
+.vg-cap{font-weight:800;font-size:13px;padding:10px 12px 0;color:var(--ink2)}
+.vg th,.vg td{padding:8px 2px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vg col.lab{width:112px}
+@container (max-width:460px){.vg col.lab{width:84px}.vg{font-size:12px}}
+.vg th{color:var(--muted);font-weight:700;font-size:12px}
+.vg td:first-child,.vg th:first-child{text-align:left;padding-left:10px;font-weight:700;white-space:normal}
+.vg td.hot{color:var(--red);font-weight:800}
+.vg td.now-col,.vg th.now-col{background:var(--blue-soft)}
+.gantt{background:var(--card);border-radius:18px;box-shadow:var(--shadow);padding:14px;overflow:hidden}
+.g-row{display:grid;grid-template-columns:130px 1fr;align-items:center;gap:8px;margin-bottom:10px}
+@container (max-width:460px){.g-row,.g-days{grid-template-columns:86px 1fr!important}.g-bar{font-size:10px;padding:0 4px}}
+.g-lab{font-weight:700;font-size:13px;line-height:1.2}
+.g-lab small{display:block;color:var(--muted);font-weight:500}
+.g-track{position:relative;height:28px;background:var(--soft);border-radius:8px}
+.g-bar{position:absolute;top:4px;bottom:4px;border-radius:6px;background:var(--green);color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;padding:0 8px;white-space:nowrap;overflow:hidden}
+.g-bar.changed{background:var(--muted)}
+.g-bar.stopped{background:var(--amber)}
+.g-bar.fluid{background:var(--blue)}
+.g-days{display:grid;grid-template-columns:130px 1fr;gap:8px;margin-bottom:8px}
+.g-days div:last-child{display:flex}
+.g-days span{flex:1;text-align:center;font-size:12px;font-weight:700;color:var(--muted)}
+.g-days span.today{color:var(--coral)}
+.g-today{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--coral);border-radius:1px}
+.log{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
+.log:last-child{border-bottom:0}
+.log .ini{width:32px;height:32px;border-radius:50%;color:#fff;display:grid;place-items:center;font-size:12px;font-weight:800;flex:0 0 auto}
+.log b{font-size:14px}
+.log p{margin:2px 0 0;font-size:14px;color:var(--ink2)}
+.inrow{display:flex;gap:8px;margin-top:10px}
+.inrow input{flex:1;min-width:0;border:1.5px solid var(--line);border-radius:14px;padding:0 12px;min-height:46px;background:var(--card)}
+
+/* alerts */
+.al{display:flex;gap:12px;background:var(--card);border-radius:18px;padding:14px;box-shadow:var(--shadow);margin-bottom:10px;border-left:5px solid var(--amber)}
+.al.lv-doctor{border-left-color:var(--navy2)}
+.al.lv-rule{border-left-color:var(--red)}
+.al.lv-sec{border-left-color:var(--green)}
+.al.done{opacity:.55}
+.al .ico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:0 0 auto;background:var(--amber-soft);color:var(--amber)}
+.al.lv-rule .ico{background:var(--red-soft);color:var(--red)}
+.al.lv-doctor .ico{background:var(--blue-soft);color:var(--blue)}
+.al.lv-sec .ico{background:var(--green-soft);color:var(--green)}
+.al-t{font-weight:800;font-size:15px;line-height:1.25}
+.al-b{font-size:13.5px;color:var(--ink2);margin-top:2px}
+.al-m{font-size:12px;color:var(--muted);margin-top:4px}
+.al-act{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.mini{min-height:40px;padding:0 13px;border-radius:12px;font-weight:700;font-size:13.5px;background:var(--soft)}
+.mini.coral{background:var(--coral);color:#fff}
+.mini.green{background:var(--green);color:#fff}
+.mini.navy{background:var(--navy);color:#fff}
+.lvl-note{display:flex;gap:10px;align-items:center;background:var(--blue-soft);color:var(--blue);border-radius:16px;padding:12px 14px;font-size:13.5px;font-weight:600;margin-bottom:12px}
+
+/* todo */
+.td{background:var(--card);border-radius:18px;padding:14px;box-shadow:var(--shadow);margin-bottom:10px;display:flex;gap:12px;align-items:flex-start}
+.td.late{border-left:5px solid var(--red)}
+.td.done{opacity:.85}
+.td .ico{width:40px;height:40px;border-radius:12px;background:var(--soft);display:grid;place-items:center;flex:0 0 auto;color:var(--ink2)}
+.td.done .ico{background:var(--green-soft);color:var(--green)}
+.file{display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:6px 10px;border-radius:10px;background:var(--blue-soft);color:var(--blue);font-weight:700;font-size:13px}
+
+/* admin */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.kpi{background:var(--card);border-radius:18px;padding:14px;box-shadow:var(--shadow)}
+.kpi b{font-family:var(--f-title);font-size:28px;display:block;line-height:1.1}
+.kpi span{font-size:13px;color:var(--muted)}
+.hbar{display:grid;grid-template-columns:90px 1fr 46px;align-items:center;gap:10px;font-size:14px;margin:8px 0}
+.hbar .tr{height:12px;background:var(--soft);border-radius:6px;overflow:hidden}
+.hbar .tr i{display:block;height:100%;background:var(--green);border-radius:6px}
+.rule{background:var(--card);border-radius:18px;padding:14px;box-shadow:var(--shadow);margin-bottom:10px}
+.rule-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.rule-t{font-weight:800}
+.rule-k{font-size:12.5px;color:var(--muted)}
+.rule-v{display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap;font-size:14px}
+.step{display:inline-flex;align-items:center;background:var(--soft);border-radius:14px}
+.step button{width:42px;height:42px;font-size:20px;font-weight:700;color:var(--coral)}
+.step b{min-width:52px;text-align:center;font-variant-numeric:tabular-nums}
+.sw{width:52px;height:32px;border-radius:16px;background:var(--line);position:relative;flex:0 0 auto;transition:background .2s}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:26px;height:26px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .2s}
+.sw.on{background:var(--green)}
+.sw.on::after{left:23px}
+.urow{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.urow:last-child{border-bottom:0}
+.urow .ini{width:40px;height:40px;border-radius:50%;color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.urow .grow{flex:1;min-width:0}
+
+/* login */
+.login{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;background:var(--bg);padding:26px 20px}
+.login::before{content:"";position:absolute;right:-70px;top:-70px;width:220px;height:220px;border-radius:50%;background:var(--pink);opacity:.7}
+.login>*{position:relative}
+.login h2{font-size:26px;margin:22px 0 6px}
+.faces{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+@container (min-width:600px){.faces{grid-template-columns:repeat(3,1fr)}}
+.face{background:var(--card);border-radius:20px;padding:16px 10px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:8px;min-height:130px}
+.face .ini{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;font-size:19px}
+.face b{font-size:15px;text-align:center;line-height:1.2}
+.face small{color:var(--muted);font-size:12.5px;margin-top:-4px}
+.pinbox{max-width:340px;margin:20px auto 0;text-align:center}
+.pin-dots{display:flex;justify-content:center;gap:14px;margin:18px 0}
+.pin-dots i{width:16px;height:16px;border-radius:50%;border:2px solid var(--navy2)}
+.pin-dots i.f{background:var(--navy2)}
+.pin-err{color:var(--red);font-weight:700;min-height:22px;font-size:14px}
+.pad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.pad button{height:62px;border-radius:18px;background:var(--card);box-shadow:var(--shadow);font-size:24px;font-weight:700;font-family:var(--f-title)}
+.pad button.k0{background:none;box-shadow:none;font-size:15px;color:var(--muted)}
+.hint{display:inline-flex;gap:8px;align-items:center;background:var(--amber-soft);color:var(--amber);border-radius:14px;padding:10px 12px;font-size:13.5px;font-weight:600;margin-top:14px;text-align:left}
+
+/* sheet */
+.sheet-wrap{position:absolute;inset:0;background:rgba(20,19,43,.45);display:flex;align-items:flex-end;z-index:20;animation:fade .18s ease}
+.sheet{background:var(--card);width:100%;max-height:90%;overflow-y:auto;border-radius:26px 26px 0 0;padding:10px 18px 22px;animation:up .22s ease}
+@keyframes fade{from{opacity:0}}
+@keyframes up{from{transform:translateY(30px);opacity:.4}}
+@media (prefers-reduced-motion:reduce){.sheet,.sheet-wrap,.bell.ping{animation:none}}
+.grab{width:44px;height:5px;border-radius:3px;background:var(--line);margin:0 auto 12px}
+.sheet h3{font-size:20px;margin-bottom:2px}
+.lbl{font-weight:800;font-size:13.5px;color:var(--ink2);margin:16px 0 8px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px}
+.opt{min-height:52px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);font-weight:700;font-size:14.5px;padding:6px 8px;line-height:1.2}
+.opt.on{border-color:var(--coral);background:var(--coral-soft);color:var(--coral)}
+.opt small{display:block;font-weight:500;font-size:12px;color:var(--muted)}
+.field{width:100%;border:1.5px solid var(--line);border-radius:14px;padding:12px;min-height:48px;background:var(--card)}
+textarea.field{min-height:84px;resize:vertical}
+.numv{font-family:var(--f-title);font-size:44px;font-weight:700;text-align:center;margin:8px 0 2px;font-variant-numeric:tabular-nums}
+.numv small{font-size:20px;color:var(--muted)}
+.check{display:flex;align-items:center;gap:12px;min-height:48px;font-weight:700}
+.check .box{width:26px;height:26px;border-radius:8px;border:2px solid var(--line);display:grid;place-items:center}
+.check.on .box{background:var(--green);border-color:var(--green);color:#fff}
+.sheet-foot{display:flex;gap:10px;margin-top:18px}
+.sheet-foot .btn{margin:0;min-height:52px}
+.toast{position:absolute;left:12px;right:12px;bottom:84px;z-index:30;background:var(--navy);color:#fff;border-radius:16px;padding:12px 14px;display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px;box-shadow:0 10px 30px -8px rgba(20,19,43,.5);animation:up .2s ease}
+.toast button{margin-left:auto;color:#A9E4DF;font-weight:800;min-height:36px}
+
+/* print */
+#print-modal{position:fixed;inset:0;z-index:60;background:rgba(20,19,43,.55);display:none;overflow-y:auto;padding:20px 12px calc(20px + env(safe-area-inset-bottom,0px))}
+#print-modal.on{display:block}
+.pm-bar{max-width:820px;margin:0 auto 12px;display:flex;gap:10px;justify-content:flex-end}
+.paper{max-width:820px;margin:0 auto;background:#fff;color:#1d1c33;border-radius:6px;padding:34px 32px;font-size:12.5px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.paper h1{font-family:var(--f-title);font-size:20px;color:#26235F}
+.paper .ph{display:flex;justify-content:space-between;border-bottom:2px solid #26235F;padding-bottom:10px;margin-bottom:14px;gap:10px}
+.paper table{width:100%;border-collapse:collapse;margin:8px 0 14px}
+.paper th,.paper td{border:1px solid #c9c8d8;padding:5px 6px;text-align:left}
+.paper th{background:#f1f0f6}
+.paper h4{margin:14px 0 4px;font-size:13px;color:#D9435E}
+.paper .grid2{display:grid;grid-template-columns:1fr 1fr;gap:4px 20px}
+.paper-wrap{overflow:hidden}
+@media (max-width:600px){.paper{padding:16px 12px;font-size:9px}.paper th,.paper td{padding:3px 2px}.paper h1{font-size:15px}.paper .grid2{grid-template-columns:1fr}}
+@media print{
+  body *{visibility:hidden}
+  #print-modal,#print-modal .paper,#print-modal .paper *{visibility:visible}
+  #print-modal{position:absolute;inset:0;background:#fff;padding:0;display:block}
+  .pm-bar{display:none}
+  .paper{box-shadow:none;max-width:none;padding:0}
+}
+</style>
+</head>
+<body>
+<header class="topbar" id="topbar" hidden>
+  <div class="wrap">
+    <button class="back-btn" data-a="home"><span class="ms">arrow_back</span>Αρχική</button>
+    <div class="tb-title" id="tb-title">Πώς δουλεύει μια νοσηλεία</div>
+  </div>
+</header>
+
+<main>
+<section id="home" class="wrap">
+  <div class="brand">
+    <div class="brand-paw"><span class="ms fill" style="font-size:28px">pets</span></div>
+    <div><div class="brand-mark">Athens Vet Clinic</div><div class="brand-sub">Κτηνιατρική κλινική · Γλυφάδα</div></div>
+  </div>
+  <h1 class="home-title">Πώς δουλεύει μια νοσηλεία στη νέα εφαρμογή</h1>
+  <span class="ver">v1, 07/10/2026</span>
+
+  <div class="free">
+    <span class="free-l">Παίξε ελεύθερα:</span>
+    <button class="pill-btn" data-a="play" data-u="u1"><span class="ms" style="color:var(--navy2)">stethoscope</span>Γιατρός</button>
+    <button class="pill-btn" data-a="play" data-u="u3"><span class="ms" style="color:var(--coral)">vaccines</span>Νοσηλεύτρια</button>
+    <button class="pill-btn" data-a="play" data-u="u5"><span class="ms" style="color:var(--green)">call</span>Γραμματεία</button>
+    <button class="pill-btn" data-a="play" data-u="u6"><span class="ms" style="color:var(--amber)">insights</span>Διοίκηση</button>
+  </div>
+
+  <div class="hero">
+    <h2>Θα δεις μια νοσηλεία από την αρχή ως το τέλος</h2>
+    <p>Τέσσερις ρόλοι: ο <b>γιατρός</b> που ορίζει τη θεραπεία, η <b>νοσηλεύτρια</b> που την εκτελεί, η <b>γραμματεία</b> που μιλά με τον ιδιοκτήτη και η <b>διοίκηση</b> που ρυθμίζει τους κανόνες. Ό,τι κάνει ο ένας, το βλέπουν αμέσως οι άλλοι.</p>
+    <button class="btn btn-coral" data-a="tour"><span class="ms fill">play_arrow</span>Δείξε μου</button>
+    <button class="btn btn-line" data-a="play"><span class="ms">touch_app</span>Θα πατάω εγώ</button>
+    <button class="btn btn-line" data-a="roles"><span class="ms">apps</span>Κάθε ρόλος χωριστά</button>
+  </div>
+
+  <div class="people" aria-hidden="true">
+    <div class="person"><div class="av" style="background:var(--navy2)"><span class="ms">stethoscope</span></div><b>Γιατρός</b><small>κινητό + tablet</small></div>
+    <div class="link"></div>
+    <div class="person"><div class="av" style="background:var(--coral)"><span class="ms">vaccines</span></div><b>Νοσηλεία</b><small>tablet</small></div>
+    <div class="link"></div>
+    <div class="person"><div class="av" style="background:var(--green)"><span class="ms">call</span></div><b>Γραμματεία</b><small>tablet / PC</small></div>
+    <div class="link"></div>
+    <div class="person"><div class="av" style="background:#B8741A"><span class="ms">insights</span></div><b>Διοίκηση</b><small>κινητό / PC</small></div>
+  </div>
+
+  <h2 class="sec-title" id="roles">Δοκίμασε κάθε ρόλο μόνο του</h2>
+  <p class="sec-sub">Ανοίγει ολόκληρη η εφαρμογή, συνδεδεμένη με αυτόν τον ρόλο. Πατάς ό,τι θέλεις, χωρίς σειρά.</p>
+  <div class="role-grid">
+    <div class="role-card"><div class="ic" style="background:var(--navy2)"><span class="ms">stethoscope</span></div><h3>Ο γιατρός</h3><p>Εισαγωγή ζώου, αγωγές με συχνότητα και διάρκεια, ζωτικά, σίτιση, εγκρίσεις αλλαγών, λήξη αγωγής, εξιτήριο. Ειδοποιείται μόνο για τα δικά του ζώα.</p><button data-a="play" data-u="u1">Άνοιγμα<span class="ms">arrow_forward</span></button></div>
+    <div class="role-card"><div class="ic" style="background:var(--coral)"><span class="ms">vaccines</span></div><h3>Η νοσηλεύτρια</h3><p>Το «Τώρα»: τι έχει να γίνει αυτή την ώρα σε όλα τα ζώα, με ένα πάτημα ανά εργασία. Τιμές, «Δεν έγινε» με αιτία, εξετάσεις, ειδοποιήσεις στο tablet.</p><button data-a="play" data-u="u3">Άνοιγμα<span class="ms">arrow_forward</span></button></div>
+    <div class="role-card"><div class="ic" style="background:var(--green)"><span class="ms">call</span></div><h3>Η γραμματεία</h3><p>Στοιχεία ιδιοκτήτη, καταγραφή κάθε τηλεφώνου, υπενθύμιση όταν πέρασαν 24 ώρες χωρίς επαφή, εκτύπωση φύλλου. <span class="tag-prop">πρόταση</span></p><button data-a="play" data-u="u5">Άνοιγμα<span class="ms">arrow_forward</span></button></div>
+    <div class="role-card"><div class="ic" style="background:#B8741A"><span class="ms">insights</span></div><h3>Η διοίκηση</h3><p>Χρήστες και PIN, κανόνες ειδοποιήσεων, ώρες και όρια, dashboard με το τι έγινε στην ώρα του και τι αργεί, ανά βάρδια.</p><button data-a="play" data-u="u6">Άνοιγμα<span class="ms">arrow_forward</span></button></div>
+  </div>
+
+  <div class="decide-card">
+    <h3><span class="ms">rule</span>Τι σημαίνει το σήμα «πρόταση»</h3>
+    <p>Μερικά σημεία δεν έχουν αποφασιστεί ακόμα, π.χ. το όριο καθυστέρησης (30 λεπτά ή 1 ώρα), πότε ειδοποιείται ο γιατρός για τη λήξη αγωγής, τι κάνει ακριβώς η γραμματεία. Στο demo δείχνουμε την πρόταση και τη σημαδεύουμε, ώστε να φαίνεται τι μένει να κλειδώσει.</p>
+  </div>
+</section>
+
+<section id="tour" class="wrap" hidden>
+  <div class="tour-grid">
+    <aside class="stepcard" id="stepcard"></aside>
+    <div class="stage" id="stage">
+      <div class="controls" id="controls"></div>
+      <div class="device tablet" id="device"><div class="screen" id="screen"></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<nav class="tournav" id="tournav" hidden>
+  <div class="wrap">
+    <button class="btn btn-line" data-a="prev"><span class="ms">arrow_back</span>Πίσω</button>
+    <button class="btn btn-coral" data-a="next" id="next-btn">Επόμενο<span class="ms">arrow_forward</span></button>
+  </div>
+</nav>
+
+<div id="print-modal" role="dialog" aria-label="Εκτύπωση καρτέλας">
+  <div class="pm-bar">
+    <button class="ctl" data-a="closePrint"><span class="ms">close</span>Κλείσιμο</button>
+    <button class="ctl coral" data-a="doPrint"><span class="ms">print</span>Εκτύπωση</button>
+  </div>
+  <div class="paper-wrap"><div class="paper" id="paper"></div></div>
+</div>
+<script>
+"use strict";
+/* ================= helpers ================= */
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ic = (n, cls = '') => `<span class="ms ${cls}">${n}</span>`;
+const pad2 = n => String(n).padStart(2, '0');
+const fmt = m => { const x = ((m % 1440) + 1440) % 1440; return pad2(Math.floor(x / 60)) + ':' + pad2(x % 60); };
+const num = v => String(v).replace('.', ',');
+const ROLE = { doctor: 'Γιατρός', nurse: 'Νοσηλευτής', secretary: 'Γραμματεία', admin: 'Διοίκηση' };
+const AVC = ['#1D3F72', '#0E7C7B', '#2E9A5E', '#B8741A', '#6A55B5', '#2C7DB8', '#8A97A0'];
+const TYPE = { med: ['Φάρμακα', 'medication'], vital: ['Ζωτικά', 'monitor_heart'], food: ['Ταΐσματα', 'restaurant'], fluid: ['Υγροθεραπεία', 'water_drop'], care: ['Φροντίδα', 'pets'] };
+const tolLabel = t => t >= 60 ? (t === 60 ? '1 ώρα' : (t / 60) + ' ώρες') : t + '′';
+const DAYS = ['Κυρ', 'Δευ', 'Τρί', 'Τετ', 'Πέμ', 'Παρ', 'Σάβ'];
+
+/* ================= demo data ================= */
+let D;
+function fresh() {
+  const now = 14 * 60 + 2;
+  const d = { now, seq: 500 };
+  d.users = [
+    { id: 'u1', name: 'Νίκος Βλάχος', short: 'Δρ. Βλάχος', role: 'doctor', rl: 'Γιατρός', ini: 'ΝΒ', c: AVC[0], active: true },
+    { id: 'u2', name: 'Σοφία Ρήγα', short: 'Δρ. Ρήγα', role: 'doctor', rl: 'Γιατρός', ini: 'ΣΡ', c: AVC[4], active: true },
+    { id: 'u3', name: 'Ελένη Παππά', short: 'Ελένη Π.', role: 'nurse', rl: 'Νοσηλεύτρια', ini: 'ΕΠ', c: AVC[1], active: true },
+    { id: 'u4', name: 'Κώστας Μαυρίδης', short: 'Κώστας Μ.', role: 'nurse', rl: 'Νοσηλευτής', ini: 'ΚΜ', c: AVC[5], active: true },
+    { id: 'u5', name: 'Μαρία Λάμπρου', short: 'Μαρία Λ.', role: 'secretary', rl: 'Γραμματεία', ini: 'ΜΛ', c: AVC[2], active: true },
+    { id: 'u6', name: 'Πέτρος Αντωνίου', short: 'Πέτρος Α.', role: 'admin', rl: 'Διοίκηση', ini: 'ΠΑ', c: AVC[3], active: true },
+    { id: 'u7', name: 'Άννα Ζαφείρη', short: 'Άννα Ζ.', role: 'nurse', rl: 'Νοσηλεύτρια', ini: 'ΑΖ', c: AVC[6], active: false }
+  ];
+  d.patients = [
+    { id: 'p1', name: 'Λούνα', sp: 'cat', species: 'Γάτα', breed: 'Ευρωπαϊκή', sex: 'Θηλυκό', age: '4 ετών', w: 4.2, cage: 3, day: 2, vid: 'VCP-20418',
+      dx: 'Απόφραξη ουρήθρας, μετά από καθετηριασμό', allergy: '', doctor: 'u1', admitted: 'Δευ 10:30',
+      catheter: 'Αριστερό πρόσθιο, Δευ', owner: 'Κατερίνα Δημάκη', phone: '69xx xxx 214', o247: true, lastContact: now - 25 * 60 - 30,
+      refused: 0, diarrhea: false, lastUrine: now - 3 * 60, status: 'in',
+      comments: [{ at: now - 300, by: 'u3', t: 'Ήπιε λίγο νερό, ήρεμη στο κλουβί.' }, { at: now - 1300, by: 'u1', t: 'Καθετήρας ούρων στη θέση του, έλεγχος ροής ανά βάρδια.' }],
+      contacts: [{ at: now - 25 * 60 - 30, by: 'u1', how: 'Τηλέφωνο', t: 'Ενημέρωση για τον καθετηριασμό. Θέλει τηλέφωνο και τη νύχτα αν χρειαστεί.' }] },
+    { id: 'p2', name: 'Ρόκυ', sp: 'dog', species: 'Σκύλος', breed: 'Λαμπραντόρ', sex: 'Αρσενικό', age: '7 ετών', w: 32, cage: 1, day: 3, vid: 'VCP-20377',
+      dx: 'Οξεία γαστρεντερίτιδα', allergy: '', doctor: 'u1', admitted: 'Κυρ 21:10',
+      catheter: 'Δεξί πρόσθιο, Κυρ · αλλαγή σήμερα', owner: 'Γιάννης Σταθόπουλος', phone: '69xx xxx 877', o247: false, lastContact: now - 5 * 60,
+      refused: 2, diarrhea: false, lastUrine: now - 15 * 60 - 10, status: 'in',
+      comments: [{ at: now - 200, by: 'u4', t: 'Αρνήθηκε και το πρωινό γεύμα.' }],
+      contacts: [{ at: now - 5 * 60, by: 'u5', how: 'Τηλέφωνο', t: 'Ο ιδιοκτήτης ρώτησε για επίσκεψη. Ορίστηκε 18:00.' }] },
+    { id: 'p3', name: 'Μπίλι', sp: 'dog', species: 'Σκύλος', breed: 'Μπιγκλ', sex: 'Αρσενικό', age: '2 ετών', w: 12, cage: 5, day: 1, vid: 'VCP-20441',
+      dx: 'Μετεγχειρητικά, ορχεκτομή', allergy: 'Πενικιλίνη', doctor: 'u2', admitted: 'Τρί 09:15',
+      catheter: 'Αριστερό πρόσθιο, σήμερα', owner: 'Ελένη Κουρή', phone: '69xx xxx 503', o247: false, lastContact: now - 4 * 60,
+      refused: 0, diarrhea: false, lastUrine: now - 2 * 60, status: 'in', comments: [], contacts: [{ at: now - 4 * 60, by: 'u2', how: 'Τηλέφωνο', t: 'Η επέμβαση πήγε καλά.' }] },
+    { id: 'p4', name: 'Μία', sp: 'cat', species: 'Γάτα', breed: 'Περσική', sex: 'Θηλυκό', age: '11 ετών', w: 3.6, cage: 2, day: 4, vid: 'VCP-20301',
+      dx: 'Σακχαρώδης διαβήτης, ρύθμιση ινσουλίνης', allergy: '', doctor: 'u2', admitted: 'Σάβ 12:00',
+      catheter: '—', owner: 'Δημήτρης Φλώρος', phone: '69xx xxx 116', o247: true, lastContact: now - 9 * 60,
+      refused: 0, diarrhea: false, lastUrine: now - 4 * 60, status: 'in', lastGlu: null,
+      comments: [{ at: now - 500, by: 'u3', t: 'Έφαγε όλο το πρωινό.' }], contacts: [{ at: now - 9 * 60, by: 'u5', how: 'Μήνυμα', t: 'Στάλθηκε ενημέρωση για τις τιμές γλυκόζης.' }] },
+    { id: 'p5', name: 'Τζέρι', sp: 'dog', species: 'Σκύλος', breed: 'Κανίς', sex: 'Αρσενικό', age: '9 ετών', w: 6, cage: 4, day: 2, vid: 'VCP-20422',
+      dx: 'Οξεία παγκρεατίτιδα', allergy: '', doctor: 'u1', admitted: 'Δευ 18:40',
+      catheter: 'Δεξί πρόσθιο, Δευ', owner: 'Αλίκη Μανωλά', phone: '69xx xxx 932', o247: false, lastContact: now - 7 * 60,
+      refused: 1, diarrhea: false, lastUrine: now - 6 * 60, status: 'in',
+      comments: [{ at: now - 20, by: 'u1', t: 'Πονάει στην ψηλάφηση. Έδωσα εντολή STAT.' }], contacts: [] }
+  ];
+  const O = (id, pid, kind, drug, dose, route, freq, from, days, tol, note, by, status = 'active', extra = {}) =>
+    Object.assign({ id, pid, kind, drug, dose, route, freq, from, days, tol, note, by, status }, extra);
+  d.orders = [
+    O('o1', 'p1', 'med', 'Βουπρενορφίνη', '0,02 mg/kg (0,08 mg)', 'IV', 8, 1, 3, 60, '', 'u1'),
+    O('o2', 'p1', 'fluid', 'Ringer\'s lactate', '12 ml/h', 'IV', 0, 1, 4, 60, 'Έλεγχος ρυθμού ανά 2 ώρες', 'u1'),
+    O('o3', 'p1', 'med', 'Μαροπιτάντη', '1 mg/kg (4,2 mg)', 'SC', 24, 1, 2, 60, '', 'u1', 'changed', { stoppedDay: 2, replacedBy: 'o3b' }),
+    O('o3b', 'p1', 'med', 'Μαροπιτάντη', '1 mg/kg (4,2 mg)', 'IV', 24, 2, 2, 60, 'Αλλαγή οδού σε IV', 'u1'),
+    O('o4', 'p2', 'med', 'Μετρονιδαζόλη', '250 mg', 'PO', 12, 1, 5, 60, '', 'u1'),
+    O('o5', 'p2', 'med', 'Ομεπραζόλη', '1 mg/kg (32 mg)', 'IV', 24, 1, 3, 60, '', 'u1'),
+    O('o6', 'p2', 'fluid', 'Ringer\'s lactate', '60 ml/h', 'IV', 0, 1, 4, 60, '', 'u1'),
+    O('o7', 'p3', 'med', 'Κεφαλεξίνη', '250 mg', 'PO', 12, 1, 7, 60, 'Αλλεργία σε πενικιλίνη: όχι αμοξικιλλίνη', 'u2'),
+    O('o8', 'p3', 'med', 'Μελοξικάμη', '0,1 mg/kg', 'PO', 24, 1, 3, 60, 'Με φαγητό', 'u2'),
+    O('o9', 'p4', 'med', 'Ινσουλίνη Caninsulin', '1 IU', 'SC', 12, 1, 7, 5, 'Κάτω από 150 mg/dl ζάχαρο δεν κάνουμε ινσουλίνη', 'u2'),
+    O('o10', 'p5', 'med', 'Μεθαδόνη', '0,2 mg/kg', 'IV', 6, 1, 3, 30, '', 'u1'),
+    O('o11', 'p5', 'fluid', 'Ringer\'s lactate', '12 ml/h', 'IV', 0, 1, 4, 60, '', 'u1')
+  ];
+  d.feed = {
+    p1: 'Urinary s/o υγρή, 40 g × 4', p2: 'Gastrointestinal low fat, 120 g × 3', p3: 'Recovery, 90 g × 3',
+    p4: 'Diabetic, 30 g × 2 (πριν την ινσουλίνη)', p5: 'Νηστεία έως αύριο, μόνο νερό'
+  };
+  d.vplan = {
+    p1: 'Θερμοκρασία κάθε 4 ώρες · HR, RR κάθε 8 ώρες · ούρηση από καθετήρα κάθε 2 ώρες',
+    p2: 'Θερμοκρασία κάθε 8 ώρες · αφόδευση και έμετος σε κάθε έλεγχο',
+    p3: 'HR, RR, πόνος κάθε 4 ώρες',
+    p4: 'Γλυκόζη πριν από κάθε δόση ινσουλίνης',
+    p5: 'HR, πόνος κάθε 2 ώρες'
+  };
+  let n = 0;
+  const T = (pid, type, title, detail, time, o = {}) => ({ id: 't' + (++n), pid, type, title, detail, time,
+    tol: o.tol ?? 60, input: o.input || 'none', unit: o.unit || '', vital: o.vital || '', status: o.status || 'pending',
+    by: o.by || '', at: o.at || 0, value: o.value || '', stat: !!o.stat, note: o.note || '', min: !!o.min, order: o.order || '' });
+  d.tasks = [
+    T('p1', 'vital', 'Θερμοκρασία', 'Θερμόμετρο ορθού', 12 * 60, { input: 'number', unit: '°C', vital: 'temp', status: 'done', by: 'u3', at: 12 * 60 + 6, value: '38,7 °C' }),
+    T('p5', 'fluid', 'Έλεγχος υγρών', 'Ringer\'s 12 ml/h', 12 * 60, { status: 'done', by: 'u4', at: 12 * 60 + 9 }),
+    T('p3', 'med', 'Κεφαλεξίνη', '250 mg PO', 8 * 60, { status: 'done', by: 'u4', at: 8 * 60 + 11, order: 'o7' }),
+    T('p2', 'med', 'Μετρονιδαζόλη', '250 mg PO', 12 * 60, { order: 'o4' }),
+    T('p5', 'med', 'Μεθαδόνη', '0,2 mg/kg (1,2 mg) IV · εντολή Δρ. Βλάχου', 13 * 60 + 55, { stat: true, tol: 15 }),
+    T('p1', 'med', 'Βουπρενορφίνη', '0,08 mg IV', 14 * 60, { order: 'o1' }),
+    T('p4', 'vital', 'Γλυκόζη', 'Πριν την ινσουλίνη', 14 * 60, { input: 'number', unit: 'mg/dl', vital: 'glu', tol: 15 }),
+    T('p4', 'med', 'Ινσουλίνη Caninsulin', '1 IU SC', 14 * 60, { tol: 5, note: 'Κάτω από 150 mg/dl ζάχαρο δεν κάνουμε ινσουλίνη', order: 'o9' }),
+    T('p1', 'vital', 'Θερμοκρασία', 'Θερμόμετρο ορθού', 14 * 60, { input: 'number', unit: '°C', vital: 'temp' }),
+    T('p3', 'vital', 'Καρδιακή συχνότητα', 'HR', 14 * 60, { input: 'number', unit: 'bpm', vital: 'hr' }),
+    T('p2', 'food', 'Τάισμα', 'Gastrointestinal low fat, 120 g', 14 * 60, { input: 'food', vital: 'food' }),
+    T('p2', 'care', 'Αφόδευση', 'Έλεγχος κλουβιού και βόλτα', 14 * 60, { input: 'stool', vital: 'stool' }),
+    T('p5', 'care', 'Ούρηση', 'Βόλτα στην αυλή', 14 * 60, { input: 'urine', vital: 'urine' }),
+    T('p1', 'care', 'Ούρηση', 'Ροή από καθετήρα', 16 * 60, { input: 'urine', vital: 'urine' }),
+    T('p1', 'food', 'Τάισμα', 'Urinary s/o υγρή, 40 g', 16 * 60, { input: 'food', vital: 'food' }),
+    T('p3', 'care', 'Βόλτα', '10 λεπτά, με κολάρο', 16 * 60),
+    T('p5', 'fluid', 'Έλεγχος υγρών', 'Ringer\'s 12 ml/h', 16 * 60),
+    T('p2', 'vital', 'Θερμοκρασία', 'Θερμόμετρο ορθού', 16 * 60, { input: 'number', unit: '°C', vital: 'temp' }),
+    T('p4', 'food', 'Τάισμα', 'Diabetic, 30 g', 19 * 60, { input: 'food', vital: 'food' }),
+    T('p3', 'med', 'Κεφαλεξίνη', '250 mg PO', 20 * 60, { order: 'o7' }),
+    T('p1', 'med', 'Βουπρενορφίνη', '0,08 mg IV', 22 * 60, { order: 'o1' })
+  ];
+  ['p1', 'p2', 'p3', 'p4', 'p5'].forEach(pid => d.tasks.push(T(pid, 'vital', 'Θερμοκρασία', 'Ελάχιστος κανόνας για όλα τα ζώα', 22 * 60, { input: 'number', unit: '°C', vital: 'temp', min: true })));
+  d.tseq = n;
+  d.vitals = {
+    p1: { temp: { '07': '38,5', '09': '38,4', '11': '38,9', '13': '38,7' }, hr: { '07': '168', '13': '172' }, rr: { '07': '28', '13': '30' }, urine: { '07': '✓', '09': '✓', '11': '✓', '13': '✓' }, food: { '09': 'Λίγο' } },
+    p2: { temp: { '07': '39,0', '09': '38,8' }, food: { '07': 'Όχι', '11': 'Όχι' }, stool: { '09': 'Μαλακή' }, vomit: { '07': '1' } },
+    p3: { hr: { '09': '96', '13': '92' }, rr: { '09': '22', '13': '20' }, temp: { '09': '38,6' } },
+    p4: { glu: { '07': '248' }, food: { '07': 'Έφαγε' }, temp: { '09': '38,3' } },
+    p5: { hr: { '07': '120', '09': '128', '11': '132', '13': '140' }, temp: { '09': '39,1' }, pain: { '11': '3/4', '13': '3/4' } }
+  };
+  d.todos = [
+    { id: 'd1', pid: 'p4', title: 'Φρουκτοζαμίνη', kind: 'exam', when: 'today', time: 11 * 60, by: 'u2', status: 'open' },
+    { id: 'd2', pid: 'p1', title: 'Ουροκαλλιέργεια, αποστολή στο IDEXX', kind: 'exam', when: 'today', time: 15 * 60, by: 'u1', status: 'open' },
+    { id: 'd3', pid: 'p5', title: 'cPL test', kind: 'exam', when: 'today', time: 9 * 60, by: 'u1', status: 'done', doneBy: 'u3', doneAt: 9 * 60 + 40, result: 'Θετικό, πάνω από 400 μg/L', file: 'IDEXX_cPL_Tzeri.pdf' },
+    { id: 'd4', pid: 'p2', title: 'Υπέρηχος κοιλίας', kind: 'exam', when: 'tomorrow', time: 10 * 60, by: 'u1', status: 'open' },
+    { id: 'd5', pid: '', title: 'Παραγγελία Ringer\'s lactate, 20 σάκοι', kind: 'admin', when: 'none', time: 0, by: 'u5', status: 'open' }
+  ];
+  d.rules = [
+    { id: 'urine', on: true, type: 'Δεν έγινε εδώ και Χ ώρες', label: 'Ούρηση', val: 15, step: 1, unit: 'ώρες', to: 'Σε όλους' },
+    { id: 'stool', on: true, type: 'Δεν έγινε εδώ και Χ ώρες', label: 'Αφόδευση', val: 48, step: 6, unit: 'ώρες', to: 'Γιατρός + νοσηλευτές' },
+    { id: 'vomit', on: true, type: 'Πάνω από Ν σε Χ ώρες', label: 'Έμετος', val: 2, step: 1, unit: 'φορές σε 24 ώρες', to: 'Γιατρός + νοσηλευτές' },
+    { id: 'diarrhea', on: true, type: 'Πρώτη εμφάνιση', label: 'Διάρροια', val: null, unit: 'η 1η φορά', to: 'Γιατρός + νοσηλευτές' },
+    { id: 'temp', on: true, type: 'Όριο τιμής', label: 'Θερμοκρασία', lo: 37.2, hi: 39.2, unit: '°C', to: 'Γιατρός + νοσηλευτές' },
+    { id: 'anorexia', on: true, type: 'Πάνω από Ν', label: 'Αφαγία', val: 2, step: 1, unit: 'γεύματα στη σειρά', to: 'Γιατρός + νοσηλευτές' },
+    { id: 'owner', on: true, type: 'Δεν έγινε εδώ και Χ ώρες', label: 'Επικοινωνία με ιδιοκτήτη', val: 24, step: 2, unit: 'ώρες', to: 'Γραμματεία + γιατρός', prop: true }
+  ];
+  d.settings = { dayStart: '07:00', tolMed: 60, tolExam: 120, idle: 3, minTemp: '09:00 και 22:00', minGlu: '09:00', expiry: 'morning' };
+  d.notifs = [];
+  return d;
+}
+
+/* ================= state ================= */
+const S = { view: 'home', mode: 'tour', step: 0, seen: new Set(), device: 'tablet' };
+let ui;
+function freshUI() {
+  return { screen: 'login', user: null, pinFor: null, pin: '', pinErr: '', tab: 'now', pid: null, ptab: 'over',
+    slot: 14 * 60, filter: 'all', search: '', admin: 'dash', sheet: null, toast: null, alertsAll: false, comment: '', ping: false };
+}
+const me = () => D.users.find(u => u.id === ui.user);
+const user = id => D.users.find(u => u.id === id) || { short: '—', ini: '?', c: '#999', name: '—' };
+const pat = id => D.patients.find(p => p.id === id);
+const ini = (u, size = 32) => `<span class="ini" style="background:${u.c};width:${size}px;height:${size}px">${esc(u.ini)}</span>`;
+const pEmoji = p => p.sp === 'cat' ? '🐱' : '🐶';
+const ago = m => { const d = D.now - m; if (d < 1) return 'μόλις τώρα'; if (d < 60) return `πριν ${d}′`; const h = Math.floor(d / 60); return h < 24 ? `πριν ${h} ώρ.` : `πριν ${Math.floor(h / 24)} ημ. και ${h % 24} ώρ.`; };
+const stOf = t => t.status !== 'pending' ? t.status : (D.now > t.time + t.tol ? 'late' : 'pending');
+const slotKey = m => { const h = Math.floor((((m % 1440) + 1440) % 1440) / 60); const s = ((h - 7) % 2 + 2) % 2 === 0 ? h : h - 1; return pad2((s + 24) % 24); };
+const canClinical = () => ['doctor', 'nurse'].includes(me()?.role);
+const isDoc = () => me()?.role === 'doctor';
+/* ================= engine: notifications & rules ================= */
+function addN(o) {
+  const n = Object.assign({ id: 'n' + (++D.seq), at: D.now, done: false, to: [], kind: 'info', lv: 'nurse', actions: [] }, o);
+  D.notifs.unshift(n);
+  if (ui && ui.user && visibleN(n)) { ui.ping = true; }
+  return n;
+}
+function visibleN(n, u = me()) {
+  if (!u) return false;
+  if (u.role === 'admin') return true;
+  return n.to.includes('all') || n.to.includes(u.id) || n.to.includes(u.role);
+}
+const openNs = () => D.notifs.filter(n => !n.done && visibleN(n) && me()?.role !== 'admin');
+function rule(id) { return D.rules.find(r => r.id === id); }
+function ownerUpdate(p, why) {
+  if (!p.o247) return;
+  D.todos.unshift({ id: 'd' + (++D.seq), pid: p.id, title: 'Ενημέρωση ιδιοκτήτη (24/7): ' + why, kind: 'owner', when: 'today', time: D.now, by: 'auto', status: 'open' });
+  addN({ to: ['secretary'], lv: 'sec', kind: 'owner', pid: p.id, title: `${p.name}: ενημέρωσε τον ιδιοκτήτη`, body: `Το ζώο έχει «Ενημέρωση 24/7». Αιτία: ${why}. Τηλ. ${p.phone}`, actions: [['call', 'Καταγραφή κλήσης']] });
+}
+function ruleAlert(p, title, body, ruleName) {
+  addN({ to: ['nurse', p.doctor], lv: 'rule', kind: 'rule', pid: p.id, title: `${p.name}: ${title}`, body: `${body} · κανόνας «${ruleName}»`, actions: [['seen', 'Το είδα'], ['goto', 'Καρτέλα']] });
+  ownerUpdate(p, title);
+}
+function seedNotifs() {
+  const r = D.patients.find(p => p.id === 'p2');
+  addN({ to: ['all'], lv: 'rule', kind: 'rule', pid: 'p2', title: 'Ρόκυ: δεν έχει ουρήσει 15 ώρες', body: 'Τελευταία ούρηση χθες 22:50 · κανόνας «Ούρηση, 15 ώρες»', actions: [['seen', 'Το είδα'], ['goto', 'Καρτέλα']], at: D.now - 8 });
+  addN({ to: ['u1'], lv: 'doctor', kind: 'expiry', pid: 'p2', order: 'o5', title: 'Ρόκυ: λήγει η Ομεπραζόλη σήμερα', body: '1 mg/kg IV κάθε 24 ώρες · 3 ημέρες (Ημ. 1–3). Συνεχίζει;', actions: [['extend', 'Συνέχιση +2 ημ.'], ['change', 'Αλλαγή'], ['end', 'Τέλος']], at: D.now - 120 });
+  addN({ to: ['nurse'], lv: 'nurse', kind: 'info', pid: 'p2', title: 'Ρόκυ: αλλαγή φλεβοκαθετήρα σήμερα', body: 'Μπήκε Κυριακή 21:10 · δεξί πρόσθιο', actions: [['seen', 'Έγινε']], at: D.now - 60 });
+  tick(true);
+}
+function tick(silent) {
+  D.tasks.forEach(t => {
+    if (t.status === 'pending' && !t.lateN && D.now > t.time + t.tol) {
+      t.lateN = true; const p = pat(t.pid);
+      addN({ to: ['nurse', p.doctor], lv: 'nurse', kind: 'late', pid: t.pid, task: t.id, title: `Καθυστερεί: ${p.name} · ${t.title}`, body: `Ώρα ${fmt(t.time)} · ανοχή ${tolLabel(t.tol)} · κλουβί ${p.cage}`, actions: [['goto', 'Στο «Τώρα»']], at: Math.max(D.now - (silent ? 1 : 0), t.time + t.tol) });
+    }
+  });
+  const ro = rule('owner');
+  D.patients.forEach(p => {
+    if (p.status === 'in' && ro.on && !p.ownerN && D.now - p.lastContact > ro.val * 60) {
+      p.ownerN = true;
+      addN({ to: ['secretary', p.doctor], lv: 'sec', kind: 'call', pid: p.id, title: `${p.name}: ${ro.val} ώρες χωρίς επαφή με τον ιδιοκτήτη`, body: `${p.owner} · ${p.phone}${p.o247 ? ' · Ενημέρωση 24/7' : ''}`, actions: [['call', 'Καταγραφή κλήσης']], at: D.now - 30 });
+    }
+  });
+}
+function closeTaskNotifs(tid) { D.notifs.forEach(n => { if (n.task === tid) n.done = true; }); }
+function record(t, label, raw) {
+  const p = pat(t.pid), u = me();
+  t.status = 'done'; t.by = u.id; t.at = D.now; t.value = label || '';
+  closeTaskNotifs(t.id);
+  if (t.vital) {
+    const k = t.vital === 'food' ? 'food' : t.vital;
+    D.vitals[p.id] = D.vitals[p.id] || {}; D.vitals[p.id][k] = D.vitals[p.id][k] || {};
+    D.vitals[p.id][k][slotKey(t.time)] = t.vital === 'temp' ? num(raw) : (t.vital === 'urine' ? (raw === 'yes' ? '✓' : '✗') : (raw ?? label));
+  }
+  const rt = rule('temp');
+  if (t.vital === 'temp' && rt.on && (raw < rt.lo || raw > rt.hi)) ruleAlert(p, `θερμοκρασία ${num(raw)} °C`, `Εκτός ορίων ${num(rt.lo)}–${num(rt.hi)} °C`, 'Θερμοκρασία');
+  if (t.vital === 'glu') p.lastGlu = raw;
+  if (t.vital === 'stool' && raw === 'Διάρροια' && !p.diarrhea && rule('diarrhea').on) { p.diarrhea = true; ruleAlert(p, '1η διάρροια', 'Καταγράφηκε στις ' + fmt(D.now), 'Διάρροια, 1η φορά'); }
+  if (t.vital === 'food') {
+    if (raw === 'Όχι') { p.refused++; const ra = rule('anorexia'); if (ra.on && p.refused > ra.val) ruleAlert(p, `αφαγία ${p.refused} γεύματα στη σειρά`, 'Δεν έφαγε ούτε σε αυτό το γεύμα', 'Αφαγία'); }
+    else if (raw === 'Έφαγε') p.refused = 0;
+  }
+  if (t.vital === 'urine' && raw === 'yes') { p.lastUrine = D.now; D.notifs.forEach(n => { if (n.pid === p.id && /ουρήσει/.test(n.title)) n.done = true; }); }
+}
+function notDone(t, reason) {
+  const p = pat(t.pid);
+  t.status = 'notdone'; t.by = me().id; t.at = D.now; t.value = reason;
+  closeTaskNotifs(t.id);
+  addN({ to: [p.doctor], lv: 'doctor', kind: 'notdone', pid: p.id, title: `Δεν έγινε: ${p.name} · ${t.title}`, body: `Αιτία: ${reason} · ${user(t.by).short} ${fmt(D.now)}`, actions: [['seen', 'Το είδα'], ['goto', 'Καρτέλα']] });
+}
+function makeTasksForOrder(o) {
+  const p = pat(o.pid); if (!o.freq) return 0;
+  let start = Math.ceil((D.now + 1) / 120) * 120, c = 0;
+  for (let m = start; m < 31 * 60; m += o.freq * 60) {
+    D.tasks.push({ id: 't' + (++D.tseq), pid: p.id, type: 'med', title: o.drug, detail: `${o.dose} ${o.route}`, time: m, tol: o.tol, input: 'none', unit: '', vital: '', status: 'pending', by: '', at: 0, value: '', stat: false, note: o.note, min: false, order: o.id, fresh: true });
+    c++;
+  }
+  return c;
+}
+
+/* ================= app render ================= */
+function tabsFor(role) {
+  if (role === 'secretary') return ['patients', 'todo', 'alerts'];
+  if (role === 'admin') return ['admin', 'now', 'patients', 'alerts'];
+  return ['now', 'patients', 'todo', 'alerts'];
+}
+const TABS = { now: ['Τώρα', 'schedule'], patients: ['Ασθενείς', 'pets'], todo: ['To-do', 'checklist'], alerts: ['Ειδοποιήσεις', 'notifications'], admin: ['Διοίκηση', 'insights'] };
+
+function renderApp() {
+  const scr = $('#screen'); if (!scr) return;
+  const body = scr.querySelector('.a-body'); const keep = body ? body.scrollTop : 0; const keyNow = ui.tab + '|' + ui.pid + '|' + ui.ptab + '|' + ui.admin;
+  let h = '';
+  if (ui.screen === 'login') h = loginHTML();
+  else {
+    const u = me(), cnt = openNs().length, tabs = tabsFor(u.role);
+    h = `<div class="app">
+      <div class="a-head">
+        <div class="a-logo">${ic('pets', 'fill')}Athens Vet</div><div class="sp"></div>
+        <button class="bell ${ui.ping ? 'ping' : ''}" data-a="tab" data-t="alerts" aria-label="Ειδοποιήσεις">${ic('notifications')}${cnt ? `<span class="cnt">${cnt}</span>` : ''}</button>
+        <button class="me" data-a="userMenu" aria-label="Αλλαγή χρήστη">${ini(u, 36)}<span class="me-txt">${esc(u.short)}<small>${esc(u.rl)} · αλλαγή</small></span></button>
+      </div>
+      <div class="a-body" id="abody">${tabHTML()}</div>
+      <nav class="a-nav">${tabs.map(t => `<button class="${ui.tab === t ? 'on' : ''}" data-a="tab" data-t="${t}">${ic(TABS[t][1])}${TABS[t][0]}${t === 'alerts' && cnt ? `<span class="nb">${cnt}</span>` : ''}</button>`).join('')}</nav>
+    </div>`;
+  }
+  if (ui.sheet) h += `<div class="sheet-wrap" data-a="closeSheet" data-self="1"><div class="sheet" role="dialog">${sheetHTML()}</div></div>`;
+  if (ui.toast) h += `<div class="toast">${ic(ui.toast.icon || 'check_circle', 'fill')}<span>${esc(ui.toast.t)}</span>${ui.toast.undo ? `<button data-a="undo">Αναίρεση</button>` : ''}</div>`;
+  scr.innerHTML = h;
+  const nb = scr.querySelector('.a-body');
+  if (nb && renderApp.lastKey === keyNow) nb.scrollTop = keep;
+  renderApp.lastKey = keyNow;
+  const con = scr.querySelector('.chips .chip.on'); if (con) { const row = con.parentElement; row.scrollLeft = con.offsetLeft - row.clientWidth / 2 + con.clientWidth / 2; } renderApp.lastSlot = String(ui.slot);
+  ui.ping = false;
+}
+let toastTimer;
+function toast(t, icon, undo) {
+  ui.toast = { t, icon, undo }; clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { ui.toast = null; renderApp(); }, undo ? 5000 : 3200);
+}
+
+function loginHTML() {
+  if (ui.pinFor) {
+    const u = user(ui.pinFor);
+    return `<div class="login"><button class="back-in" data-a="pinBack">${ic('arrow_back')}Άλλο πρόσωπο</button>
+      <div class="pinbox">${ini(u, 72).replace('class="ini"', 'class="ini" style="margin:0 auto;font-size:22px;display:grid"')}
+      <h2 style="margin:12px 0 0">${esc(u.name)}</h2><div class="muted">${esc(u.rl)}</div>
+      <div class="pin-dots">${[0, 1, 2, 3].map(i => `<i class="${ui.pin.length > i ? 'f' : ''}"></i>`).join('')}</div>
+      <div class="pin-err">${esc(ui.pinErr)}</div>
+      <div class="pad">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map(k => `<button data-a="pin" data-k="${k}">${k}</button>`).join('')}<button class="k0" data-a="pinFill">1234</button><button data-a="pin" data-k="0">0</button><button class="k0" data-a="pinDel" aria-label="Διαγραφή">${ic('backspace')}</button></div>
+      <div class="hint">${ic('science')}Demo: το PIN όλων είναι 1234. Πάτα «1234» για αυτόματη συμπλήρωση.</div></div></div>`;
+  }
+  const faces = D.users.filter(u => u.active);
+  return `<div class="login">
+    <div class="a-logo" style="font-size:24px">${ic('pets', 'fill')}Athens Vet Clinic</div>
+    <h2>Ποιος είσαι;</h2><div class="muted">Πάτα το πρόσωπό σου και βάλε το PIN σου. Κάθε καταχώρηση θα γράφει το όνομά σου.</div>
+    <div class="faces">${faces.map(u => `<button class="face" data-a="face" data-u="${u.id}">${ini(u, 58)}<b>${esc(u.name)}</b><small>${esc(u.rl)}</small></button>`).join('')}</div>
+    <div class="hint">${ic('lock')}Το tablet κλειδώνει μόνο του μετά από ${D.settings.idle} λεπτά αδράνειας και όταν ξυπνά.</div>
+  </div>`;
+}
+
+function tabHTML() {
+  switch (ui.tab) {
+    case 'now': return nowHTML();
+    case 'patients': return ui.pid ? patientHTML() : patientsHTML();
+    case 'todo': return todoHTML();
+    case 'alerts': return alertsHTML();
+    case 'admin': return adminHTML();
+  }
+  return '';
+}
+
+/* ---------- Τώρα ---------- */
+function taskHTML(t) {
+  const p = pat(t.pid), st = stOf(t), ro = !canClinical();
+  let extra = '';
+  if (t.note && st !== 'done') extra += `<div class="t-note">${ic('info')} ${esc(t.note)}</div>`;
+  if (t.order === 'o9' && st !== 'done' && st !== 'notdone' && p.lastGlu != null && p.lastGlu < 150) extra += `<div class="t-warn">${ic('warning')} Τελευταία γλυκόζη ${p.lastGlu} mg/dl: κάτω από 150</div>`;
+  if (t.min && st !== 'done') extra += `<div class="tags" style="margin-top:6px"><span class="tag blue">${ic('rule')}ελάχιστος κανόνας</span></div>`;
+  if (st === 'done') extra += `<div class="t-sign">${ic('verified', 'fill')} ${t.value ? esc(t.value) + ' · ' : ''}${esc(user(t.by).short)} ${fmt(t.at)}</div>`;
+  if (st === 'notdone') extra += `<div class="t-sign">${ic('do_not_disturb_on')} Δεν έγινε: ${esc(t.value)} · ${esc(user(t.by).short)} ${fmt(t.at)}</div>`;
+  if (st === 'late') extra += `<div class="t-warn">${ic('schedule')} Καθυστερεί ${D.now - t.time}′ (ανοχή ${tolLabel(t.tol)})</div>`;
+  const acts = ro ? '' : `<div class="t-act">${st === 'pending' || st === 'late' ? `<button class="dots-btn" data-a="notdoneSheet" data-id="${t.id}" aria-label="Δεν έγινε">${ic('more_vert')}</button>` : ''}
+     <button class="tick" data-a="tick" data-id="${t.id}" aria-label="Έγινε">${ic(st === 'done' ? 'check' : (t.input === 'number' ? 'edit' : 'check'))}</button></div>`;
+  return `<div class="task ${st}"><div class="t-time">${fmt(t.time)}</div><div class="t-main"><div class="t-title">${esc(p.name)} · ${esc(t.title)}</div><div class="t-sub">${esc(t.detail)} · κλουβί ${p.cage}</div>${extra}</div>${acts}</div>`;
+}
+function nowHTML() {
+  const active = D.tasks.filter(t => pat(t.pid).status === 'in');
+  const late = active.filter(t => stOf(t) === 'late');
+  const slots = [...new Set(active.filter(t => !t.stat).map(t => t.time - (t.time % 60)))].sort((a, b) => a - b);
+  const inSlot = t => ui.slot === 'late' ? stOf(t) === 'late' : (t.time - (t.time % 60)) === ui.slot && !t.stat;
+  let list = active.filter(inSlot);
+  if (ui.filter !== 'all') list = list.filter(t => t.type === ui.filter);
+  const slotAll = active.filter(t => (t.time - (t.time % 60)) === (ui.slot === 'late' ? -1 : ui.slot));
+  const doneN = slotAll.filter(t => t.status !== 'pending').length;
+  const stat = active.filter(t => t.stat && t.status === 'pending');
+  const groups = Object.keys(TYPE).map(k => [k, list.filter(t => t.type === k)]).filter(g => g[1].length);
+  const ro = !canClinical();
+  return `
+  ${ro ? `<div class="lvl-note">${ic('visibility')}Μόνο προβολή. Καταγράφουν γιατροί και νοσηλευτές.</div>` : ''}
+  <div class="sum"><div class="k">${ic('schedule', 'fill')}${DAYS[2]} · τώρα ${fmt(D.now)}</div>
+    <div class="big">${ui.slot === 'late' ? late.length + ' καθυστερημένες' : `${doneN} από ${slotAll.length} έγιναν`}</div>
+    <div class="row"><span>${ui.slot === 'late' ? 'Όλες οι ώρες' : 'Ώρα ' + fmt(ui.slot)}</span><span>${late.length} καθυστερούν</span><span>${active.filter(t => t.status === 'pending' && t.time > D.now).length} επόμενες</span></div>
+    <div class="bar"><i style="width:${slotAll.length ? Math.round(doneN / slotAll.length * 100) : 0}%"></i></div></div>
+  ${stat.map(t => { const p = pat(t.pid); return `<div class="stat"><div class="t-main"><span class="stat-l">STAT · ΤΩΡΑ</span><div class="t-title">${esc(p.name)} · ${esc(t.title)}</div><div class="t-sub">${esc(t.detail)} · κλουβί ${p.cage}</div></div>${ro ? '' : `<button class="tick" data-a="tick" data-id="${t.id}" aria-label="Έγινε">${ic('check')}</button>`}</div>`; }).join('')}
+  <div class="chips" style="margin-top:14px">
+    <button class="chip late ${ui.slot === 'late' ? 'on' : ''}" data-a="slot" data-s="late">${ic('warning')}Καθυστερημένα ${late.length}</button>
+    ${slots.map(s => `<button class="chip ${ui.slot === s ? 'on' : ''}" data-a="slot" data-s="${s}">${fmt(s)}</button>`).join('')}
+  </div>
+  <div class="chips" style="margin-top:8px">
+    ${[['all', 'Όλα'], ...Object.entries(TYPE).map(([k, v]) => [k, v[0]])].map(([k, l]) => `<button class="chip ${ui.filter === k ? 'on' : ''}" data-a="filter" data-f="${k}" style="min-height:36px">${l}</button>`).join('')}
+  </div>
+  ${groups.length ? `<div class="groups">${groups.map(([k, ts]) => `<div><div class="group-h">${ic(TYPE[k][1])}${TYPE[k][0]} <span class="muted small">${ts.length}</span></div>${ts.map(taskHTML).join('')}</div>`).join('')}</div>`
+    : `<div class="empty">${ic('task_alt', 'fill')}<div><b>Τίποτα εδώ.</b><br>Δεν υπάρχουν εργασίες σε αυτή την ώρα ή το φίλτρο.</div></div>`}`;
+}
+
+/* ---------- Ασθενείς ---------- */
+function todayStats(pid) { const ts = D.tasks.filter(t => t.pid === pid && t.time < 24 * 60 + 7 * 60); return [ts.filter(t => t.status !== 'pending').length, ts.length, ts.some(t => stOf(t) === 'late')]; }
+function patientsHTML() {
+  const q = ui.search.trim().toLowerCase();
+  const list = D.patients.filter(p => p.status === 'in' && (!q || (p.name + p.vid + p.owner).toLowerCase().includes(q))).sort((a, b) => a.cage - b.cage);
+  const out = D.patients.filter(p => p.status === 'out');
+  return `<div class="h-row" style="margin-top:0"><h3>Νοσηλεύονται ${list.length}</h3>${isDoc() ? `<button class="add-btn" data-a="admitSheet">${ic('add')}Εισαγωγή</button>` : ''}</div>
+  <div class="search">${ic('search')}<input data-in="search" value="${esc(ui.search)}" placeholder="Όνομα, ID ή ιδιοκτήτης" aria-label="Αναζήτηση"></div>
+  <div class="pgrid" style="margin-top:12px">${list.map(p => { const [d, t, late] = todayStats(p.id); return `
+    <button class="pcard" data-a="openP" data-p="${p.id}">${late ? '<span class="reddot" title="Κάτι καθυστερεί"></span>' : ''}
+      <div class="p-av ${p.sp}">${pEmoji(p)}</div>
+      <div style="flex:1;min-width:0"><div class="p-name">${esc(p.name)}</div><div class="p-meta">${esc(p.species)} · ${esc(p.breed)} · ${num(p.w)} kg · ${esc(p.vid)}</div>
+      <div class="tags"><span class="tag">${ic('door_sliding')}Κλουβί ${p.cage}</span><span class="tag">Ημέρα ${p.day}</span>${p.allergy ? `<span class="tag red">${ic('warning')}${esc(p.allergy)}</span>` : ''}${p.o247 ? `<span class="tag green">${ic('call')}24/7</span>` : ''}</div>
+      <div class="prog"><i style="width:${Math.round(d / t * 100)}%"></i></div><div class="small muted" style="margin-top:4px">${d}/${t} εργασίες σήμερα · ${esc(user(p.doctor).short)}</div></div>
+    </button>`; }).join('')}</div>
+  ${out.length ? `<div class="h-row"><h3>Εξιτήρια σήμερα</h3></div>${out.map(p => `<div class="card" style="display:flex;gap:12px;align-items:center"><div class="p-av ${p.sp}" style="width:40px;height:40px;font-size:20px">${pEmoji(p)}</div><div><b>${esc(p.name)}</b><div class="small muted">Εξιτήριο ${fmt(p.outAt)} · ${esc(user(p.outBy).short)} · η καρτέλα μένει στο ιστορικό</div></div></div>`).join('')}` : ''}`;
+}
+const PTABS = [['over', 'Επισκόπηση'], ['orders', 'Αγωγή'], ['vitals', 'Ζωτικά'], ['gantt', 'Gantt'], ['notes', 'Σχόλια'], ['owner', 'Επικοινωνία']];
+function patientHTML() {
+  const p = pat(ui.pid);
+  return `<button class="back-in" data-a="closeP">${ic('arrow_back')}Ασθενείς</button>
+  <div class="card"><div class="p-head"><div class="p-av ${p.sp}">${pEmoji(p)}</div><div style="flex:1;min-width:0">
+    <div class="p-name" style="font-size:22px">${esc(p.name)}</div><div class="p-meta" style="margin-bottom:6px">${esc(p.species)} · ${esc(p.breed)} · ${esc(p.sex)} · ${esc(p.age)} · ${num(p.w)} kg</div>
+    <div class="tags"><span class="tag">${esc(p.vid)}</span><span class="tag">Ημέρα ${p.day}</span>${p.allergy ? `<span class="tag red">${ic('warning')}Αλλεργία: ${esc(p.allergy)}</span>` : ''}${p.o247 ? `<span class="tag green">${ic('call')}Ενημέρωση 24/7</span>` : ''}</div></div></div>
+    <div class="p-actions">
+      <button class="ghost" data-a="cageSheet">${ic('door_sliding')}Κλουβί ${p.cage}</button>
+      <button class="ghost" data-a="print">${ic('print')}Εκτύπωση</button>
+      ${isDoc() ? `<button class="ghost coral" data-a="dischargeSheet">${ic('logout')}Εξιτήριο</button>` : ''}
+    </div></div>
+  <div class="pills">${PTABS.map(([k, l]) => `<button class="${ui.ptab === k ? 'on' : ''}" data-a="ptab" data-k="${k}">${l}</button>`).join('')}</div>
+  ${ptabHTML(p)}`;
+}
+function ptabHTML(p) {
+  if (ui.ptab === 'over') {
+    const [d, t] = todayStats(p.id); const ns = D.notifs.filter(n => n.pid === p.id && !n.done).slice(0, 3);
+    return `<div class="cols"><div class="card"><dl class="kv">
+      <dt>Διάγνωση</dt><dd>${esc(p.dx)}</dd><dt>Εισαγωγή</dt><dd>${esc(p.admitted)}</dd><dt>Υπεύθυνος</dt><dd>${esc(user(p.doctor).name)}</dd>
+      <dt>Καθετήρας</dt><dd>${esc(p.catheter)}</dd><dt>Ιδιοκτήτης</dt><dd>${esc(p.owner)} · ${esc(p.phone)}</dd><dt>Σίτιση</dt><dd>${esc(D.feed[p.id] || '—')}</dd>
+      <dt>RER</dt><dd>${Math.round(30 * p.w + 70)} kcal/ημέρα (30 × ${num(p.w)} + 70)</dd></dl></div>
+      <div class="card"><b>Σήμερα</b><div class="prog" style="height:10px"><i style="width:${Math.round(d / t * 100)}%"></i></div><div class="small muted" style="margin-top:6px">${d} από ${t} εργασίες</div>
+      <div style="margin-top:14px"><b>Ανοιχτές ειδοποιήσεις</b>${ns.length ? ns.map(n => `<div class="small" style="margin-top:6px">${ic('notifications', 'small')} ${esc(n.title)}</div>`).join('') : '<div class="small muted" style="margin-top:6px">Καμία</div>'}</div></div></div>`;
+  }
+  if (ui.ptab === 'orders') {
+    const os = D.orders.filter(o => o.pid === p.id);
+    const freqL = o => o.kind === 'fluid' ? 'Συνεχής έγχυση' : `Κάθε ${o.freq} ώρες`;
+    return `${isDoc() ? `<button class="add-btn" style="margin-bottom:12px" data-a="orderSheet">${ic('add')}Νέα εντολή</button>` : ''}
+    ${me().role === 'nurse' ? `<div class="lvl-note">${ic('info')}Ο νοσηλευτής δεν αλλάζει εντολές. Στέλνει πρόταση και ισχύει μόνο αν την εγκρίνει ο υπεύθυνος γιατρός.</div>` : ''}
+    ${os.map(o => { const off = o.status !== 'active'; const end = o.from + o.days - 1; return `<div class="order ${off ? 'off' : ''}"><div class="o-top"><div><div class="o-name">${esc(o.drug)} <span class="muted" style="font-weight:600">${esc(o.dose)} ${esc(o.route)}</span></div>
+      <div class="o-sub">${freqL(o)} · ${o.days} ημέρες (Ημ. ${o.from}–${end}) · ανοχή ${tolLabel(o.tol)}</div>${o.note ? `<div class="t-note">${ic('info')} ${esc(o.note)}</div>` : ''}
+      <div class="small muted" style="margin-top:6px">${esc(user(o.by).short)}${o.origin ? ' · ' + esc(o.origin) : ''}</div></div>
+      ${o.status === 'active' ? `<span class="tag green">Ενεργή</span>` : o.status === 'changed' ? `<span class="tag">Άλλαξε Ημ. ${o.stoppedDay}</span>` : `<span class="tag amber">Σταμάτησε Ημ. ${o.stoppedDay}</span>`}</div>
+      ${!off && isDoc() ? `<div class="o-act"><button class="mini" data-a="orderSheet" data-r="${o.id}">${ic('edit')} Αλλαγή</button><button class="mini" data-a="stopOrder" data-o="${o.id}">${ic('stop_circle')} Διακοπή</button></div>` : ''}
+      ${!off && me().role === 'nurse' ? `<div class="o-act"><button class="mini navy" data-a="proposeSheet" data-o="${o.id}">${ic('forward_to_inbox')} Πρόταση αλλαγής</button></div>` : ''}</div>`; }).join('')}
+    <div class="card"><b>${ic('restaurant')} Σίτιση</b><div class="small" style="margin-top:4px">${esc(D.feed[p.id] || '—')} · RER ${Math.round(30 * p.w + 70)} kcal</div>
+      <b style="display:block;margin-top:12px">${ic('monitor_heart')} Ζωτικά</b><div class="small" style="margin-top:4px">${esc(D.vplan[p.id] || 'Όπως ορίζει ο γιατρός')}</div>
+      <div class="tags" style="margin-top:8px"><span class="tag blue wrap">${ic('rule')}+ ελάχιστος κανόνας: θερμοκρασία ${esc(D.settings.minTemp)}, γλυκόζη ${esc(D.settings.minGlu)}</span></div></div>`;
+  }
+  if (ui.ptab === 'vitals') {
+    const slots = ['07', '09', '11', '13', '15', '17', '19', '21', '23', '01', '03', '05'];
+    const rows = [['temp', 'Θερμ. °C'], ['hr', 'HR'], ['rr', 'RR'], ['glu', 'Γλυκόζη'], ['pain', 'Πόνος'], ['food', 'Φαγητό'], ['urine', 'Ούρηση'], ['stool', 'Αφόδευση'], ['vomit', 'Έμετος']];
+    const v = D.vitals[p.id] || {}; const nowS = slotKey(D.now); const rt = rule('temp');
+    return `<div class="small muted" style="margin:0 2px 8px">24ωρο από ${esc(D.settings.dayStart)} · κάθε στήλη = 2 ώρες · με κόκκινο ό,τι είναι εκτός ορίων</div>
+    ${[['Ημέρα', slots.slice(0, 6)], ['Νύχτα', slots.slice(6)]].map(([cap, ss]) => `<div class="grid-wrap"><div class="vg-cap">${cap} ${ss[0]}:00–${ss[5]}:00</div><table class="vg"><colgroup><col class="lab">${ss.map(() => '<col>').join('')}</colgroup><thead><tr><th>Μέτρηση</th>${ss.map(s => `<th class="${s === nowS ? 'now-col' : ''}">${s}</th>`).join('')}</tr></thead><tbody>
+    ${rows.map(([k, l]) => `<tr><td>${l}</td>${ss.map(s => { const val = v[k]?.[s] ?? ''; const f = k === 'temp' && val && (parseFloat(val.replace(',', '.')) < rt.lo || parseFloat(val.replace(',', '.')) > rt.hi); const bad = val === 'Όχι' || val === 'Διάρροια' || val === '✗'; return `<td class="${s === nowS ? 'now-col' : ''} ${f || bad ? 'hot' : ''}">${esc(val)}</td>`; }).join('')}</tr>`).join('')}
+    </tbody></table></div>`).join('')}`;
+  }
+  if (ui.ptab === 'gantt') {
+    const os = D.orders.filter(o => o.pid === p.id);
+    const maxD = Math.max(p.day + 2, ...os.map(o => o.from + o.days - 1));
+    const W = d => (d - 1) / maxD * 100;
+    return `<div class="small muted" style="margin:0 2px 8px">Κάθε μπάρα δείχνει από πότε ως πότε δόθηκε κάθε αγωγή. Γκρι = άλλαξε, πορτοκαλί = σταμάτησε.</div>
+    <div class="gantt"><div class="g-days"><div></div><div>${Array.from({ length: maxD }, (_, i) => `<span class="${i + 1 === p.day ? 'today' : ''}">Ημ. ${i + 1}</span>`).join('')}</div></div>
+    ${os.map(o => { const endPlan = o.from + o.days - 1, end = o.status === 'active' ? endPlan : Math.min(endPlan, o.stoppedDay); const cls = o.status === 'changed' ? 'changed' : o.status === 'stopped' ? 'stopped' : (o.kind === 'fluid' ? 'fluid' : '');
+      return `<div class="g-row"><div class="g-lab">${esc(o.drug)}<small>${esc(o.dose)} ${esc(o.route)}</small></div><div class="g-track"><div class="g-bar ${cls}" style="left:${W(o.from)}%;width:${(end - o.from + 1) / maxD * 100}%">${o.kind === 'fluid' ? 'συνεχής' : 'ανά ' + o.freq + 'ω'}</div><div class="g-today" style="left:${(p.day - .5) / maxD * 100}%"></div></div></div>`; }).join('')}</div>`;
+  }
+  if (ui.ptab === 'notes') {
+    return `<div class="card">${p.comments.length ? p.comments.slice().sort((a, b) => b.at - a.at).map(c => { const u = user(c.by); return `<div class="log">${ini(u)}<div><b>${esc(u.short)}</b> <span class="small muted">${fmt(c.at)}</span><p>${esc(c.t)}</p></div></div>`; }).join('') : '<div class="muted">Κανένα σχόλιο ακόμα.</div>'}
+      ${me().role !== 'admin' ? `<div class="inrow"><input data-in="comment" value="${esc(ui.comment)}" placeholder="Γράψε σχόλιο" aria-label="Νέο σχόλιο"><button class="add-btn" data-a="addComment">${ic('send')}</button></div>` : ''}</div>`;
+  }
+  if (ui.ptab === 'owner') {
+    const h = Math.floor((D.now - p.lastContact) / 60), late = h >= rule('owner').val;
+    return `<div class="card"><dl class="kv"><dt>Ιδιοκτήτης</dt><dd>${esc(p.owner)}</dd><dt>Τηλέφωνο</dt><dd>${esc(p.phone)}</dd><dt>Ενημέρωση 24/7</dt><dd>${p.o247 ? 'Ναι, και τη νύχτα' : 'Όχι, μόνο σε ώρες κλινικής'}</dd>
+      <dt>Τελευταία επαφή</dt><dd style="color:${late ? 'var(--red)' : 'inherit'}">${ago(p.lastContact)}${late ? ' · πέρασαν ' + rule('owner').val + ' ώρες' : ''}</dd></dl>
+      ${['secretary', 'doctor'].includes(me().role) ? `<button class="add-btn" style="margin-top:14px" data-a="contactSheet">${ic('call')}Καταγραφή επικοινωνίας</button>` : ''}</div>
+    <div class="h-row"><h3>Ιστορικό επικοινωνίας</h3></div>
+    <div class="card">${p.contacts.length ? p.contacts.slice().sort((a, b) => b.at - a.at).map(c => { const u = user(c.by); return `<div class="log">${ini(u)}<div><b>${esc(u.short)}</b> <span class="small muted">${esc(c.how)} · ${ago(c.at)}</span><p>${esc(c.t)}</p></div></div>`; }).join('') : '<div class="muted">Καμία επικοινωνία ακόμα.</div>'}</div>`;
+  }
+  return '';
+}
+
+/* ---------- To-do ---------- */
+function todoHTML() {
+  const isLate = d => d.status === 'open' && d.when === 'today' && d.kind === 'exam' && D.now > d.time + D.settings.tolExam;
+  const groups = [['Καθυστερημένα', D.todos.filter(isLate)], ['Σήμερα', D.todos.filter(d => d.when === 'today' && !isLate(d))], ['Αύριο', D.todos.filter(d => d.when === 'tomorrow')], ['Χωρίς ημερομηνία', D.todos.filter(d => d.when === 'none')]];
+  const canDo = me().role !== 'admin';
+  return `<div class="h-row" style="margin-top:0"><h3>Εξετάσεις και εκκρεμότητες</h3>${canDo ? `<button class="add-btn" data-a="todoNewSheet">${ic('add')}Νέο</button>` : ''}</div>
+  ${groups.filter(g => g[1].length).map(([l, ds]) => `<div class="group-h" style="margin-top:14px">${l} <span class="muted small">${ds.length}</span></div>${ds.map(d => { const p = d.pid ? pat(d.pid) : null; const late = isLate(d);
+    return `<div class="td ${late ? 'late' : ''} ${d.status === 'done' ? 'done' : ''}"><div class="ico">${ic(d.status === 'done' ? 'task_alt' : d.kind === 'exam' ? 'biotech' : d.kind === 'owner' ? 'call' : 'inventory_2')}</div><div style="flex:1;min-width:0">
+      <b>${esc(d.title)}</b><div class="small muted">${p ? esc(p.name) + ' · ' : ''}${d.when !== 'none' ? (d.when === 'tomorrow' ? 'Αύριο ' : '') + fmt(d.time) + ' · ' : ''}${d.by === 'auto' ? 'αυτόματα από κανόνα' : esc(user(d.by).short)}</div>
+      ${late ? `<div class="t-warn">${ic('schedule')} Πέρασαν πάνω από ${D.settings.tolExam / 60} ώρες</div>` : ''}
+      ${d.status === 'done' ? `<div class="t-sign">${ic('verified', 'fill')} ${esc(user(d.doneBy).short)} ${fmt(d.doneAt)}${d.result ? ' · ' + esc(d.result) : ''}</div>${d.file ? `<div class="file">${ic('picture_as_pdf')}${esc(d.file)}</div>` : ''}` : ''}
+    </div>${d.status === 'open' && canDo ? `<button class="mini green" data-a="todoDoneSheet" data-d="${d.id}">Έγινε</button>` : ''}</div>`; }).join('')}`).join('')}`;
+}
+
+/* ---------- Ειδοποιήσεις ---------- */
+function alertsHTML() {
+  const u = me(); let ns = D.notifs.filter(n => visibleN(n));
+  const open = ns.filter(n => !n.done);
+  if (!ui.alertsAll && u.role !== 'admin') ns = open;
+  const note = { doctor: `${ic('smartphone')}Επίπεδο γιατρού: μόνο για τα ζώα σας, ως push στο κινητό.`, nurse: `${ic('tablet')}Επίπεδο νοσηλείας: εμφανίζονται σε όλα τα tablets, με ήχο.`, secretary: `${ic('call')}Γραμματεία: επικοινωνία με ιδιοκτήτες.`, admin: `${ic('history')}Διοίκηση: βλέπετε όλο το ιστορικό, χωρίς να λαμβάνετε ειδοποιήσεις.` }[u.role];
+  const ICON = { rule: 'emergency', late: 'schedule', expiry: 'event_busy', approve: 'rule', notdone: 'do_not_disturb_on', call: 'call', owner: 'call', info: 'info' };
+  return `<div class="lvl-note">${note}</div>
+  ${u.role !== 'admin' ? `<div class="seg" style="margin-bottom:12px"><button class="${!ui.alertsAll ? 'on' : ''}" data-a="alertsAll" data-v="0">Ανοιχτές ${open.length}</button><button class="${ui.alertsAll ? 'on' : ''}" data-a="alertsAll" data-v="1">Όλες</button></div>` : ''}
+  ${ns.length ? ns.map(n => `<div class="al lv-${n.lv} ${n.done ? 'done' : ''}"><div class="ico">${ic(ICON[n.kind] || 'notifications', 'fill')}</div><div style="flex:1;min-width:0">
+    <div class="al-t">${esc(n.title)}</div><div class="al-b">${esc(n.body)}</div><div class="al-m">${ago(n.at)}${n.done ? ' · ολοκληρώθηκε' : ''}${u.role === 'admin' ? ' · προς ' + n.to.map(x => x === 'all' ? 'όλους' : x === 'nurse' ? 'νοσηλευτές' : x === 'secretary' ? 'γραμματεία' : user(x).short).join(', ') : ''}</div>
+    ${!n.done && u.role !== 'admin' && n.actions.length ? `<div class="al-act">${n.actions.map(([a, l], i) => `<button class="mini ${i === 0 ? 'coral' : ''}" data-a="nact" data-n="${n.id}" data-x="${a}">${esc(l)}</button>`).join('')}</div>` : ''}</div></div>`).join('')
+    : `<div class="empty">${ic('notifications_off')}<div>Καμία ανοιχτή ειδοποίηση.</div></div>`}`;
+}
+
+/* ---------- Διοίκηση ---------- */
+function adminHTML() {
+  const segs = [['dash', 'Dashboard'], ['rules', 'Κανόνες'], ['settings', 'Ρυθμίσεις'], ['users', 'Χρήστες']];
+  let h = `<div class="seg four" style="margin-bottom:14px">${segs.map(([k, l]) => `<button class="${ui.admin === k ? 'on' : ''}" data-a="adminSeg" data-k="${k}">${l}</button>`).join('')}</div>`;
+  if (ui.admin === 'dash') {
+    const due = D.tasks.filter(t => t.status !== 'pending' || stOf(t) === 'late'); const ok = due.filter(t => t.status === 'done' && t.at <= t.time + t.tol).length;
+    const late = D.tasks.filter(t => stOf(t) === 'late').length; const nd = D.tasks.filter(t => t.status === 'notdone').length;
+    h += `<div class="kpis"><div class="kpi"><b>${due.length ? Math.round(ok / due.length * 100) : 100}%</b><span>στην ώρα τους σήμερα</span></div><div class="kpi"><b>${D.patients.filter(p => p.status === 'in').length}</b><span>νοσηλεύονται</span></div>
+      <div class="kpi"><b style="color:var(--red)">${late}</b><span>καθυστερούν τώρα</span></div><div class="kpi"><b style="color:var(--amber)">${nd}</b><span>«Δεν έγινε» σήμερα</span></div></div>
+      <div class="card" style="margin-top:12px"><b>Στην ώρα τους, ανά βάρδια (7 ημέρες)</b>
+      ${[['Πρωί', 94], ['Απόγευμα', 88], ['Νύχτα', 79]].map(([l, v]) => `<div class="hbar"><span>${l}</span><div class="tr"><i style="width:${v}%"></i></div><b>${v}%</b></div>`).join('')}
+      <div class="small muted">Ενδεικτικά νούμερα για το demo.</div></div>
+      <div class="h-row"><h3>Έτοιμες αναφορές</h3></div>
+      ${['Φύλλο νοσηλείας ανά ζώο και ημέρα', 'Καθυστερήσεις ανά βάρδια και χρήστη', '«Δεν έγινε» με αιτίες', 'Επικοινωνία με ιδιοκτήτες', 'Εργασίες ανά νοσηλευτή'].map(r => `<div class="card" style="display:flex;align-items:center;gap:10px;padding:12px 14px"><span style="flex:1;font-weight:700">${r}</span><button class="mini" data-a="export">Excel</button><button class="mini" data-a="export">PDF</button></div>`).join('')}`;
+  }
+  if (ui.admin === 'rules') {
+    h += `<div class="small muted" style="margin:0 2px 10px">Αλλάζεις όριο ή παραλήπτη χωρίς προγραμματιστή. Η αλλαγή ισχύει αμέσως σε όλα τα tablets και κινητά.</div>
+    ${D.rules.map(r => `<div class="rule"><div class="rule-top"><div><div class="rule-t">${esc(r.label)} ${r.prop ? '<span class="tag-prop">πρόταση</span>' : ''}</div><div class="rule-k">${esc(r.type)} · ${esc(r.to)}</div></div><button class="sw ${r.on ? 'on' : ''}" data-a="ruleOn" data-r="${r.id}" aria-label="Ενεργός κανόνας"></button></div>
+      <div class="rule-v">${r.id === 'temp' ? `Κάτω από <span class="step"><button data-a="ruleStep" data-r="temp" data-f="lo" data-d="-0.1">−</button><b>${num(r.lo.toFixed(1))}</b><button data-a="ruleStep" data-r="temp" data-f="lo" data-d="0.1">+</button></span> ή πάνω από <span class="step"><button data-a="ruleStep" data-r="temp" data-f="hi" data-d="-0.1">−</button><b>${num(r.hi.toFixed(1))}</b><button data-a="ruleStep" data-r="temp" data-f="hi" data-d="0.1">+</button></span> °C`
+        : r.val == null ? `<span class="muted">${esc(r.unit)}</span>` : `<span class="step"><button data-a="ruleStep" data-r="${r.id}" data-f="val" data-d="-${r.step}">−</button><b>${r.val}</b><button data-a="ruleStep" data-r="${r.id}" data-f="val" data-d="${r.step}">+</button></span> ${esc(r.unit)}`}</div></div>`).join('')}
+    <button class="btn btn-line" data-a="export" style="margin-top:6px">${ic('add')}Νέος κανόνας</button>`;
+  }
+  if (ui.admin === 'settings') {
+    const s = D.settings;
+    h += `<div class="card"><b>Προεπιλεγμένη ανοχή φαρμάκων και ζωτικών</b> <span class="tag-prop">απόφαση Q3</span><div class="small muted" style="margin:4px 0 10px">Ο γιατρός μπορεί να βάλει άλλη σε κάθε εντολή, π.χ. 5′ για ινσουλίνη.</div>
+        <div class="seg">${[30, 60].map(v => `<button class="${s.tolMed === v ? 'on' : ''}" data-a="setTol" data-v="${v}">${tolLabel(v)}</button>`).join('')}</div></div>
+      <div class="card"><b>Ανοχή εξετάσεων</b><div class="seg" style="margin-top:10px">${[120, 180].map(v => `<button class="${s.tolExam === v ? 'on' : ''}" data-a="setExam" data-v="${v}">${v / 60} ώρες</button>`).join('')}</div></div>
+      <div class="card"><b>Ελάχιστος κανόνας για όλα τα ζώα</b><dl class="kv" style="margin-top:8px"><dt>Θερμοκρασία</dt><dd>${esc(s.minTemp)}</dd><dt>Γλυκόζη</dt><dd>1 φορά, ${esc(s.minGlu)} <span class="tag-prop">πρόταση</span></dd></dl><div class="small muted" style="margin-top:6px">Ισχύει όταν ο γιατρός δεν έχει ορίσει κάτι άλλο.</div></div>
+      <div class="card"><b>Ειδοποίηση λήξης αγωγής</b> <span class="tag-prop">απόφαση A1</span><div class="seg" style="margin-top:10px"><button class="${s.expiry === 'morning' ? 'on' : ''}" data-a="setExp" data-v="morning">Πρωί τελευταίας ημέρας</button><button class="${s.expiry === 'before' ? 'on' : ''}" data-a="setExp" data-v="before">Πριν την τελευταία δόση</button></div></div>
+      <div class="card"><dl class="kv"><dt>Έναρξη ημέρας</dt><dd>${esc(s.dayStart)} (πρωινή βάρδια)</dd><dt>Κλείδωμα tablet</dt><dd>μετά από ${s.idle} λεπτά</dd><dt>Λάθος PIN</dt><dd>5 → κλείδωμα</dd></dl></div>`;
+  }
+  if (ui.admin === 'users') {
+    h += `<div class="card">${D.users.map(u => `<div class="urow">${ini(u, 40)}<div class="grow"><b>${esc(u.name)}</b><div class="small muted">${esc(u.rl)} · PIN •••• · ${tabsFor(u.role).map(t => TABS[t][0]).join(', ')}</div></div><button class="sw ${u.active ? 'on' : ''}" data-a="userOn" data-u="${u.id}" aria-label="Ενεργός χρήστης"></button></div>`).join('')}</div>
+    <div class="small muted" style="margin:10px 2px">Ο ανενεργός χρήστης δεν εμφανίζεται στην οθόνη σύνδεσης. Το ιστορικό του μένει.</div>
+    <button class="btn btn-line" data-a="export">${ic('person_add')}Νέος χρήστης</button>`;
+  }
+  return h;
+}
+/* ================= sheets ================= */
+const REASONS = ['Έμετος', 'Χαμηλό ζάχαρο', 'Αρνήθηκε / επιθετικό', 'Δεν βρέθηκε φλέβα', 'Το ζώο ήταν σε εξέταση', 'Άλλο'];
+const CHOICES = { food: [['Έφαγε', 'Έφαγε'], ['Λίγο', 'Λίγο'], ['Όχι', 'Δεν έφαγε']], stool: [['Φυσιολογική', 'Φυσιολογική'], ['Μαλακή', 'Μαλακή'], ['Διάρροια', 'Διάρροια'], ['Καμία', 'Καμία']], urine: [['yes', 'Ούρησε'], ['no', 'Δεν ούρησε']] };
+const opt = (act, val, label, on, extra = '') => `<button class="opt ${on ? 'on' : ''}" data-a="${act}" data-v="${esc(val)}" ${extra}>${label}</button>`;
+function sheetHTML() {
+  const s = ui.sheet, f = s.f || {};
+  const foot = (ok, label) => `<div class="sheet-foot"><button class="btn btn-line" data-a="closeSheet">Άκυρο</button><button class="btn btn-coral" data-a="${ok}">${label}</button></div>`;
+  if (s.type === 'value') {
+    const t = D.tasks.find(x => x.id === s.id), p = pat(t.pid);
+    return `<div class="grab"></div><h3>${esc(p.name)} · ${esc(t.title)}</h3><div class="muted small">${esc(t.detail)} · ${fmt(t.time)}</div>
+      <div class="numv">${esc(s.v || '—')} <small>${esc(t.unit)}</small></div>
+      <div class="pad">${[1, 2, 3, 4, 5, 6, 7, 8, 9].map(k => `<button data-a="key" data-k="${k}">${k}</button>`).join('')}<button data-a="key" data-k=",">,</button><button data-a="key" data-k="0">0</button><button data-a="key" data-k="del" aria-label="Διαγραφή">${ic('backspace')}</button></div>
+      ${foot('saveValue', 'Αποθήκευση')}`;
+  }
+  if (s.type === 'choice') {
+    const t = D.tasks.find(x => x.id === s.id), p = pat(t.pid);
+    return `<div class="grab"></div><h3>${esc(p.name)} · ${esc(t.title)}</h3><div class="muted small">${esc(t.detail)} · ${fmt(t.time)}</div>
+      <div class="opts" style="margin-top:16px">${CHOICES[t.input].map(([v, l]) => opt('saveChoice', v, l, false)).join('')}</div>${foot('closeSheet', 'Κλείσιμο').replace('btn btn-coral', 'btn btn-line')}`;
+  }
+  if (s.type === 'notdone') {
+    const t = D.tasks.find(x => x.id === s.id), p = pat(t.pid);
+    return `<div class="grab"></div><h3>Δεν έγινε: ${esc(p.name)} · ${esc(t.title)}</h3><div class="muted small">Η αιτία είναι υποχρεωτική. Ειδοποιείται ο υπεύθυνος γιατρός.</div>
+      <div class="opts" style="margin-top:14px;grid-template-columns:1fr 1fr">${REASONS.map(r => opt('pick', r, r, f.r === r, 'data-k="r"')).join('')}</div>${foot('saveNotDone', 'Καταχώρηση')}`;
+  }
+  if (s.type === 'order') {
+    const p = pat(ui.pid);
+    return `<div class="grab"></div><h3>${s.replace ? 'Αλλαγή εντολής' : 'Νέα εντολή'} · ${esc(p.name)}</h3><div class="muted small">${num(p.w)} kg${p.allergy ? ' · αλλεργία: ' + esc(p.allergy) : ''}</div>
+      <div class="lbl">Φάρμακο</div><input class="field" data-in="f.drug" value="${esc(f.drug)}">
+      <div class="lbl">Δόση</div><input class="field" data-in="f.dose" value="${esc(f.dose)}">
+      <div class="lbl">Οδός</div><div class="opts">${['IV', 'SC', 'IM', 'PO'].map(v => opt('pick', v, v, f.route === v, 'data-k="route"')).join('')}</div>
+      <div class="lbl">Κάθε πότε</div><div class="opts">${[6, 8, 12, 24].map(v => opt('pick', v, `${v} ώρες`, f.freq == v, 'data-k="freq"')).join('')}</div>
+      <div class="lbl">Ημέρες</div><span class="step"><button data-a="fstep" data-k="days" data-d="-1">−</button><b>${f.days}</b><button data-a="fstep" data-k="days" data-d="1">+</button></span>
+      <div class="lbl">Ανοχή χρόνου</div><div class="opts">${[5, 15, 30, 60, 120].map(v => opt('pick', v, tolLabel(v), f.tol == v, 'data-k="tol"')).join('')}</div>
+      <div class="lbl">Σημείωση για τη νοσηλεία</div><input class="field" data-in="f.note" value="${esc(f.note)}" placeholder="π.χ. με φαγητό">
+      ${foot('saveOrder', 'Αποθήκευση')}`;
+  }
+  if (s.type === 'propose') {
+    const o = D.orders.find(x => x.id === s.o);
+    return `<div class="grab"></div><h3>Πρόταση αλλαγής · ${esc(o.drug)}</h3><div class="muted small">Τώρα: ${esc(o.dose)} ${esc(o.route)}, κάθε ${o.freq} ώρες. Πηγαίνει για έγκριση στον ${esc(user(pat(o.pid).doctor).short)}.</div>
+      <div class="lbl">Νέα συχνότητα</div><div class="opts">${[6, 8, 12, 24].map(v => opt('pick', v, `${v} ώρες`, f.freq == v, 'data-k="freq"')).join('')}</div>
+      <div class="lbl">Γιατί</div><textarea class="field" data-in="f.t">${esc(f.t)}</textarea>${foot('sendPropose', 'Αποστολή για έγκριση')}`;
+  }
+  if (s.type === 'admit') {
+    const used = D.patients.filter(p => p.status === 'in').map(p => p.cage); const free = [1, 2, 3, 4, 5, 6, 7, 8].filter(c => !used.includes(c));
+    return `<div class="grab"></div><h3>Εισαγωγή ζώου</h3><div class="muted small">Τα πεδία είναι συμπληρωμένα για το demo.</div>
+      <div class="lbl">Όνομα</div><input class="field" data-in="f.name" value="${esc(f.name)}">
+      <div class="lbl">ID VetClinic Pro</div><input class="field" data-in="f.vid" value="${esc(f.vid)}">
+      <div class="lbl">Είδος</div><div class="opts">${[['dog', 'Σκύλος'], ['cat', 'Γάτα']].map(([v, l]) => opt('pick', v, l, f.sp === v, 'data-k="sp"')).join('')}</div>
+      <div class="lbl">Φυλή · βάρος</div><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><input class="field" style="flex:1;min-width:140px" data-in="f.breed" value="${esc(f.breed)}"><span class="step"><button data-a="fstep" data-k="w" data-d="-0.5">−</button><b>${num(f.w)} kg</b><button data-a="fstep" data-k="w" data-d="0.5">+</button></span></div>
+      <div class="lbl">Αλλεργίες</div><input class="field" data-in="f.allergy" value="${esc(f.allergy)}" placeholder="Καμία">
+      <div class="lbl">Διάγνωση</div><input class="field" data-in="f.dx" value="${esc(f.dx)}">
+      <div class="lbl">Κλουβί</div><div class="opts">${free.map(c => opt('pick', c, 'Κλουβί ' + c, f.cage == c, 'data-k="cage"')).join('')}</div>
+      <div class="lbl">Υπεύθυνος γιατρός</div><div class="opts">${D.users.filter(u => u.role === 'doctor').map(u => opt('pick', u.id, esc(u.short), f.doctor === u.id, 'data-k="doctor"')).join('')}</div>
+      <div class="lbl">Ιδιοκτήτης · τηλέφωνο</div><div style="display:flex;gap:10px;flex-wrap:wrap"><input class="field" style="flex:1;min-width:150px" data-in="f.owner" value="${esc(f.owner)}"><input class="field" style="flex:1;min-width:130px" data-in="f.phone" value="${esc(f.phone)}"></div>
+      <button class="check ${f.o247 ? 'on' : ''}" data-a="toggleF" data-k="o247"><span class="box">${f.o247 ? ic('check') : ''}</span>Ο ιδιοκτήτης θέλει ενημέρωση 24/7</button>
+      <div class="lbl">Έτοιμο πρωτόκολλο</div><div class="opts">${[['none', 'Κανένα'], ['postop', 'Μετεγχειρητικό'], ['gastro', 'Γαστρεντερίτιδα']].map(([v, l]) => opt('pick', v, l, f.proto === v, 'data-k="proto"')).join('')}</div>
+      ${foot('saveAdmit', 'Αποθήκευση')}`;
+  }
+  if (s.type === 'todoDone') {
+    const d = D.todos.find(x => x.id === s.d);
+    return `<div class="grab"></div><h3>${esc(d.title)}</h3><div class="muted small">${d.pid ? esc(pat(d.pid).name) : 'Γενικό'}</div>
+      ${d.kind === 'exam' ? `<div class="lbl">Αποτέλεσμα</div><textarea class="field" data-in="f.result">${esc(f.result)}</textarea>
+      <button class="check ${f.file ? 'on' : ''}" data-a="toggleF" data-k="file"><span class="box">${f.file ? ic('check') : ''}</span>Επισύναψη αρχείου IDEXX (PDF)</button>` : ''}
+      ${foot('saveTodoDone', 'Ολοκλήρωση')}`;
+  }
+  if (s.type === 'todoNew') {
+    return `<div class="grab"></div><h3>Νέο to-do</h3><div class="lbl">Τι</div><input class="field" data-in="f.title" value="${esc(f.title)}">
+      <div class="lbl">Ζώο</div><div class="opts">${[['', 'Γενικό'], ...D.patients.filter(p => p.status === 'in').map(p => [p.id, p.name])].map(([v, l]) => opt('pick', v, esc(l), f.pid === v, 'data-k="pid"')).join('')}</div>
+      <div class="lbl">Πότε</div><div class="opts">${[['today', 'Σήμερα'], ['tomorrow', 'Αύριο'], ['none', 'Χωρίς ημερομηνία']].map(([v, l]) => opt('pick', v, l, f.when === v, 'data-k="when"')).join('')}</div>
+      <div class="lbl">Είδος</div><div class="opts">${[['exam', 'Εξέταση'], ['admin', 'Άλλο']].map(([v, l]) => opt('pick', v, l, f.kind === v, 'data-k="kind"')).join('')}</div>${foot('saveTodoNew', 'Προσθήκη')}`;
+  }
+  if (s.type === 'contact') {
+    const p = pat(s.pid);
+    return `<div class="grab"></div><h3>Επικοινωνία · ${esc(p.name)}</h3><div class="muted small">${esc(p.owner)} · ${esc(p.phone)}</div>
+      <div class="lbl">Τρόπος</div><div class="opts">${['Τηλέφωνο', 'Μήνυμα', 'Από κοντά'].map(v => opt('pick', v, v, f.how === v, 'data-k="how"')).join('')}</div>
+      <div class="lbl">Τι ειπώθηκε</div><textarea class="field" data-in="f.t">${esc(f.t)}</textarea>${foot('saveContact', 'Καταγραφή')}`;
+  }
+  if (s.type === 'cage') {
+    const p = pat(ui.pid); const used = D.patients.filter(x => x.status === 'in' && x.id !== p.id).map(x => x.cage);
+    return `<div class="grab"></div><h3>Κλουβί · ${esc(p.name)}</h3><div class="muted small">Τα ζώα αλλάζουν κλουβί για καθαρισμό. Ένα πάτημα και ενημερώνεται παντού.</div>
+      <div class="opts" style="margin-top:14px">${[1, 2, 3, 4, 5, 6, 7, 8].map(c => used.includes(c) ? `<button class="opt" disabled style="opacity:.4">Κλουβί ${c}<small>πιασμένο</small></button>` : opt('setCage', c, 'Κλουβί ' + c, p.cage === c)).join('')}</div>${foot('closeSheet', 'Κλείσιμο').replace('btn btn-coral', 'btn btn-line')}`;
+  }
+  if (s.type === 'discharge') {
+    const p = pat(ui.pid); const pend = D.tasks.filter(t => t.pid === p.id && t.status === 'pending').length;
+    return `<div class="grab"></div><h3>Εξιτήριο · ${esc(p.name)}</h3><p class="muted">Θα σταματήσουν ${pend} εργασίες που εκκρεμούν και όλες οι ειδοποιήσεις του. Η καρτέλα μένει στο ιστορικό.</p>${foot('saveDischarge', 'Εξιτήριο')}`;
+  }
+  if (s.type === 'userMenu') {
+    const u = me();
+    return `<div class="grab"></div><div style="display:flex;gap:12px;align-items:center">${ini(u, 52)}<div><h3>${esc(u.name)}</h3><div class="muted">${esc(u.rl)}</div></div></div>
+      <p class="muted small" style="margin:12px 0 0">Ό,τι καταγράφεις τώρα υπογράφεται «${esc(u.short)}». Αν αφήνεις το tablet, άλλαξε χρήστη.</p>
+      <button class="btn btn-coral" style="margin-top:16px" data-a="logout">${ic('switch_account')}Αλλαγή χρήστη</button><button class="btn btn-line" data-a="closeSheet">Άκυρο</button>`;
+  }
+  return '';
+}
+
+/* ================= tour ================= */
+function as(uid, tab, x = {}) {
+  ui.user = uid; ui.screen = 'app'; ui.pinFor = null; ui.pin = ''; ui.tab = tab; ui.pid = x.pid || null; ui.ptab = x.ptab || 'over';
+  ui.admin = x.admin || 'dash'; ui.sheet = null; ui.slot = x.slot ?? ui.slot; ui.filter = 'all'; ui.alertsAll = false;
+}
+const STEPS = [
+  { t: 'Σύνδεση με πρόσωπο και PIN', sees: 'Στο tablet εμφανίζονται τα πρόσωπα της ομάδας. Πατάς το δικό σου και βάζεις τετραψήφιο PIN.', why: 'Τα tablets είναι κοινά. Έτσι κάθε καταχώρηση γράφει ποιος την έκανε και πότε, χωρίς email και κωδικούς.', tr: 'Πάτα «Ελένη Παππά» και μετά «1234». Δοκίμασε και ένα λάθος PIN.', dev: 'tablet', go() { ui.screen = 'login'; ui.user = null; ui.pinFor = null; ui.pin = ''; ui.pinErr = ''; ui.sheet = null; } },
+  { t: 'Κλείδωμα και αλλαγή χρήστη', sees: 'Πάνω δεξιά φαίνεται ποιος είναι συνδεδεμένος. Ένα πάτημα εκεί κλειδώνει και γυρνά στα πρόσωπα.', why: 'Ο επόμενος που πιάνει το tablet δεν γράφει κατά λάθος με το όνομα του προηγούμενου. Μετά από 3 λεπτά αδράνειας κλειδώνει μόνο του.', tr: 'Πάτα «Ελένη Π.» πάνω δεξιά ή το κουμπί «Κλείδωμα» πάνω από το tablet.', dev: 'tablet', go() { as('u3', 'now'); } },
+  { t: 'Το «Τώρα» της νοσηλεύτριας', sees: 'Όλες οι εργασίες της ώρας για όλα τα ζώα, ομαδοποιημένες σε φάρμακα, ζωτικά, ταΐσματα. Πάνω η σύνοψη: πόσες έγιναν από πόσες.', why: 'Η νοσηλεύτρια δεν ψάχνει ζώο-ζώο. Βλέπει τι έχει να κάνει τώρα και τίποτα δεν χάνεται στην αλλαγή βάρδιας.', tr: 'Πάτα ✓ στη Βουπρενορφίνη της Λούνας. Γράφεται όνομα και ώρα και εμφανίζεται «Αναίρεση».', dev: 'tablet', go() { as('u3', 'now', { slot: 14 * 60 }); } },
+  { t: 'Καταγραφή με τιμή', sees: 'Οι εργασίες με τιμή ανοίγουν από κάτω πληκτρολόγιο ή κάρτες επιλογής: θερμοκρασία, γλυκόζη, «Έφαγε / Λίγο / Δεν έφαγε».', why: 'Η τιμή μπαίνει μόνη της στο 24ωρο της καρτέλας και ελέγχεται αμέσως από τους κανόνες.', tr: 'Πάτα τη Θερμοκρασία της Λούνας και βάλε 39,6: χτυπά ο κανόνας θερμοκρασίας. Μετά βάλε γλυκόζη 132 στη Μία και δες τι γράφει η ινσουλίνη της.', dev: 'tablet', go() { as('u3', 'now', { slot: 14 * 60 }); } },
+  { t: '«Δεν έγινε» με αιτία', sees: 'Δίπλα σε κάθε εργασία υπάρχει ⋮ για «Δεν έγινε». Η αιτία είναι υποχρεωτική.', why: 'Το «δεν δόθηκε» είναι πληροφορία, όχι κενό. Ο υπεύθυνος γιατρός ειδοποιείται αμέσως.', tr: 'Πάτα ⋮ στην ινσουλίνη της Μίας και διάλεξε «Χαμηλό ζάχαρο».', dev: 'tablet', go() { as('u3', 'now', { slot: 14 * 60 }); } },
+  { t: 'Καθυστέρηση: κόκκινο και ειδοποίηση', sees: 'Ό,τι περάσει την ανοχή χρόνου γίνεται κόκκινο, μπαίνει στα «Καθυστερημένα» και στέλνει ειδοποίηση στα tablets και στον υπεύθυνο γιατρό.', why: 'Κάθε εντολή έχει τη δική της ανοχή: 5′ η ινσουλίνη, 1 ώρα τα υπόλοιπα. Έτσι δεν χτυπάνε άσκοπες ειδοποιήσεις.', tr: 'Πάτα «+30′ χρόνος» πάνω από το tablet και μετά «Καθυστερημένα».', dec: 'Q3: προεπιλεγμένη ανοχή 30 λεπτά ή 1 ώρα; Η ανοχή ανά φάρμακο που ζήτησε ο Δημήτρης υπάρχει ήδη.', dev: 'tablet', go() { as('u3', 'now', { slot: 14 * 60 }); } },
+  { t: 'Επείγουσα εντολή STAT', sees: 'Η εντολή STAT εμφανίζεται κόκκινη στην κορυφή του «Τώρα», πάνω από όλα, σε όλα τα tablets.', why: 'Το επείγον δεν χάνεται ανάμεσα στις εργασίες ρουτίνας.', tr: 'Πάτα ✓ στη Μεθαδόνη του Τζέρι.', dev: 'tablet', go() { as('u3', 'now', { slot: 14 * 60 }); } },
+  { t: 'Κανόνες που ειδοποιούν μόνοι τους', sees: 'Οι ειδοποιήσεις της νοσηλείας: ο Ρόκυ δεν έχει ουρήσει 15 ώρες, καθυστερήσεις, αλλαγή καθετήρα.', why: 'Κανείς δεν μετρά ώρες με το μυαλό. Η εφαρμογή ξέρει πότε ούρησε, έφαγε ή αφόδευσε κάθε ζώο και ειδοποιεί όταν περάσει το όριο.', tr: 'Πήγαινε στο «Τώρα» και βάλε στον Ρόκυ τάισμα «Δεν έφαγε». Είναι το 3ο γεύμα στη σειρά, άρα χτυπά ο κανόνας αφαγίας.', dev: 'tablet', go() { as('u3', 'alerts'); } },
+  { t: 'Εισαγωγή ζώου', sees: 'Ο γιατρός πατά «Εισαγωγή» και γράφει ζώο, ID του VetClinic Pro, κλουβί, υπεύθυνο γιατρό, ιδιοκτήτη και αν θέλει ενημέρωση 24/7.', why: 'Ο υπεύθυνος γιατρός ορίζει ποιος ειδοποιείται. Ένα έτοιμο πρωτόκολλο φτιάχνει τις πρώτες εντολές με ένα πάτημα.', tr: 'Πάτα «Εισαγωγή», διάλεξε πρωτόκολλο και «Αποθήκευση». Ο Όσκαρ θα εμφανιστεί στη λίστα και οι εργασίες του στο «Τώρα».', dec: 'Στη v1 τα στοιχεία περνιούνται με το χέρι, όχι από το VetClinic Pro (Q9).', dev: 'tablet', go() { as('u1', 'patients'); } },
+  { t: 'Ορισμός αγωγής', sees: 'Φάρμακο σε ελεύθερο κείμενο, δόση, οδός, κάθε πότε, πόσες ημέρες, ανοχή χρόνου και σημείωση για τη νοσηλεία.', why: 'Από αυτά η εφαρμογή φτιάχνει μόνη της τις εργασίες στο «Τώρα» μέχρι να λήξει η αγωγή. Τη δόση τη γράφει ο γιατρός, χωρίς αυτόματο υπολογισμό.', tr: 'Πάτα «Νέα εντολή», άλλαξε συχνότητα ή ημέρες και πάτα «Αποθήκευση».', dev: 'tablet', go() { as('u1', 'patients', { pid: 'p1', ptab: 'orders' }); } },
+  { t: 'Ζωτικά σε 24ωρο', sees: 'Το πλέγμα του χάρτινου φύλλου, ανά 2 ώρες από τις 07:00. Η τρέχουσα στήλη είναι χρωματισμένη.', why: 'Ό,τι καταγράφει η νοσηλεύτρια στο «Τώρα» μπαίνει εδώ μόνο του. Τα εκτός ορίων φαίνονται κόκκινα.', tr: 'Αν έβαλες 39,6 στη Λούνα, θα το δεις κόκκινο στη στήλη 13:00.', dev: 'tablet', go() { as('u1', 'patients', { pid: 'p1', ptab: 'vitals' }); } },
+  { t: 'Gantt αγωγών', sees: 'Κάθε αγωγή ως μπάρα στις ημέρες νοσηλείας. Η Μαροπιτάντη άλλαξε οδό την Ημ. 2 και φαίνονται και οι δύο.', why: 'Μια αγωγή δεν διορθώνεται από πάνω. Σταματά και ξεκινά νέα, ώστε να φαίνεται από πότε ως πότε έπαιρνε τι.', tr: 'Γύρνα στην «Αγωγή», πάτα «Αλλαγή» σε ένα φάρμακο και ξαναδές το Gantt.', dev: 'tablet', go() { as('u1', 'patients', { pid: 'p1', ptab: 'gantt' }); } },
+  { t: 'Πρόταση αλλαγής από τη νοσηλεία', sees: 'Η νοσηλεύτρια βλέπει τις εντολές αλλά δεν τις αλλάζει. Πατά «Πρόταση αλλαγής» και γράφει τι προτείνει.', why: 'Κάθε αλλαγή περνά από τον υπεύθυνο γιατρό. Φαίνεται ποιος την πρότεινε και ποιος την ενέκρινε.', tr: 'Πάτα «Πρόταση αλλαγής» στη Βουπρενορφίνη και «Αποστολή για έγκριση».', dec: 'A7: πρόταση με έγκριση (Δημήτρης) ή απευθείας καταγραφή με ίχνος (Καρράς);', dev: 'tablet', go() { as('u3', 'patients', { pid: 'p1', ptab: 'orders' }); } },
+  { t: 'Έγκριση από το κινητό', sees: 'Στο κινητό του γιατρού φτάνει η πρόταση με «Εγκρίνω» και «Απορρίπτω».', why: 'Ο γιατρός αποφασίζει από όπου κι αν είναι. Με την έγκριση η παλιά εντολή σταματά και ξεκινά η νέα.', tr: 'Πάτα «Εγκρίνω» και μετά άνοιξε την καρτέλα της Λούνας.', dev: 'phone', go() {
+      if (!D.notifs.some(n => n.kind === 'approve' && !n.done)) addN({ to: ['u1'], lv: 'doctor', kind: 'approve', pid: 'p1', order: 'o1', prop: { freq: 12, by: 'u3', t: 'Είναι πολύ ήρεμη, πόνος 0/4 στις δύο τελευταίες μετρήσεις.' }, title: 'Πρόταση αλλαγής: Λούνα · Βουπρενορφίνη', body: 'Ελένη Π.: κάθε 12 ώρες αντί για 8. «Είναι πολύ ήρεμη, πόνος 0/4 στις δύο τελευταίες μετρήσεις.»', actions: [['approve', 'Εγκρίνω'], ['reject', 'Απορρίπτω']] });
+      as('u1', 'alerts'); } },
+  { t: 'Λήξη αγωγής', sees: 'Όταν τελειώνουν οι ημέρες μιας αγωγής, ο γιατρός ρωτιέται: Συνέχιση, Αλλαγή ή Τέλος.', why: 'Καμία αγωγή δεν τελειώνει σιωπηλά και καμία δεν συνεχίζεται χωρίς απόφαση.', tr: 'Στην Ομεπραζόλη του Ρόκυ πάτα «Συνέχιση +2 ημ.» και δες το Gantt του.', dec: 'A1: ειδοποίηση το πρωί της τελευταίας ημέρας ή πριν την τελευταία δόση; A2: αν δεν απαντήσει, η αγωγή σταματά;', dev: 'phone', go() { as('u1', 'alerts'); } },
+  { t: 'To-do και εξετάσεις', sees: 'Ό,τι δεν έχει σταθερή ώρα: εξετάσεις, τηλέφωνα, παραγγελίες, σε ομάδες Καθυστερημένα, Σήμερα, Αύριο.', why: 'Η εξέταση κλείνει με αποτέλεσμα και αρχείο IDEXX, όχι μόνο με «Έγινε», και ο γιατρός ειδοποιείται.', tr: 'Πάτα «Έγινε» στη Φρουκτοζαμίνη της Μίας, γράψε αποτέλεσμα και επισύναψε το αρχείο.', dev: 'tablet', go() { as('u3', 'todo'); } },
+  { t: 'Γραμματεία και ιδιοκτήτης', sees: 'Η γραμματεία βλέπει πότε μίλησε τελευταία φορά κάποιος με κάθε ιδιοκτήτη. Στις 24 ώρες χωρίς επαφή έρχεται ειδοποίηση.', why: 'Ο ιδιοκτήτης ενημερώνεται τακτικά και όλοι βλέπουν τι του ειπώθηκε.', tr: 'Στη Λούνα πάτα «Καταγραφή κλήσης», διάλεξε τρόπο και γράψε τι είπατε.', dec: 'A5: η γραμματεία βλέπει κλινικά αλλά δεν δίνει εντολές. Ο Καρράς απάντησε «όχι» σε νέους ρόλους (Q6).', dev: 'tablet', go() { as('u5', 'alerts'); } },
+  { t: 'Εκτύπωση και εξιτήριο', sees: 'Με ένα κουμπί βγαίνει σελίδα A4 με αγωγές, ζωτικά και σχόλια, όπως το χαρτί. Ο γιατρός κάνει και το εξιτήριο.', why: 'Για αρχείο ή για παραπομπή. Με το εξιτήριο σταματούν οι εργασίες και η καρτέλα μένει στο ιστορικό.', tr: 'Πάτα «Εκτύπωση». Μετά «Εξιτήριο» και δες ότι ο Ρόκυ φεύγει από το «Τώρα».', dev: 'tablet', go() { as('u1', 'patients', { pid: pat('p2').status === 'in' ? 'p2' : 'p1', ptab: 'over' }); } },
+  { t: 'Διοίκηση: κανόνες και ρυθμίσεις', sees: 'Οι κανόνες ειδοποιήσεων με τα όριά τους και διακόπτες. Στις ρυθμίσεις: ανοχές, ώρες ελάχιστου κανόνα, λήξη αγωγής.', why: 'Η κλινική αλλάζει όρια χωρίς προγραμματιστή και η αλλαγή ισχύει αμέσως παντού.', tr: 'Ανέβασε το όριο θερμοκρασίας σε 39,8. Στις «Ρυθμίσεις» βάλε ανοχή 30′ και δες στο «Τώρα» τι γίνεται κόκκινο.', dev: 'tablet', go() { as('u6', 'admin', { admin: 'rules' }); } },
+  { t: 'Dashboard και αναφορές', sees: 'Πόσες εργασίες έγιναν στην ώρα τους, τι καθυστερεί τώρα, ανά βάρδια, και έτοιμες αναφορές με εξαγωγή.', why: 'Η διοίκηση βλέπει πού χάνεται η πληροφορία χωρίς να ρωτήσει κανέναν.', tr: 'Πάτα «Χρήστες» και απενεργοποίησε την Ελένη: φεύγει από την οθόνη σύνδεσης, το ιστορικό της μένει.', dev: 'tablet', go() { as('u6', 'admin', { admin: 'dash' }); } }
+];
+
+/* ================= page ================= */
+function goStep(i) {
+  S.step = Math.max(0, Math.min(STEPS.length - 1, i)); S.seen.add(S.step);
+  const st = STEPS[S.step]; S.device = st.dev; st.go(); ui.toast = null; renderPage();
+  window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+}
+function renderPage() {
+  const home = S.view === 'home';
+  $('#home').hidden = !home; $('#tour').hidden = home; $('#topbar').hidden = home;
+  $('#tournav').hidden = home || S.mode !== 'tour';
+  if (home) return;
+  $('#tb-title').textContent = S.mode === 'tour' ? 'Πώς δουλεύει μια νοσηλεία' : 'Παίζεις ελεύθερα';
+  const sc = $('#stepcard');
+  if (S.mode === 'tour') {
+    const st = STEPS[S.step];
+    sc.innerHTML = `<div class="step-n">Βήμα ${S.step + 1} από ${STEPS.length}</div><h2>${esc(st.t)}</h2>
+      <div class="sc-h">Τι βλέπει ο χρήστης</div><p>${esc(st.sees)}</p>
+      <div class="sc-h">Γιατί το θέλουμε</div><p>${esc(st.why)}</p>
+      <div class="sc-h">Δοκίμασε</div><div class="try">${esc(st.tr)}</div>
+      ${st.dec ? `<div class="decide"><b>${ic('rule')} Θέλει απόφαση</b><br>${esc(st.dec)}</div>` : ''}
+      <button class="btn btn-coral goto-dev" data-a="toDevice">${ic('arrow_downward')}Δοκίμασέ το στο ${S.device === 'phone' ? 'κινητό' : 'tablet'}</button>
+      <div class="dots">${STEPS.map((_, i) => `<button class="${i === S.step ? 'on' : S.seen.has(i) ? 'seen' : ''}" data-a="jump" data-i="${i}" aria-label="Βήμα ${i + 1}"></button>`).join('')}</div>`;
+    $('#next-btn').innerHTML = S.step === STEPS.length - 1 ? `Τέλος${ic('check')}` : `Επόμενο${ic('arrow_forward')}`;
+  } else {
+    sc.innerHTML = `<div class="step-n">Ελεύθερο παιχνίδι</div><h2>Πάτα ό,τι θέλεις</h2>
+      <p>Όλα δουλεύουν όπως στην πραγματική εφαρμογή, με ενδεικτικά ζώα και εργασίες. Άλλαξε χρήστη από το όνομα πάνω δεξιά για να δεις την ίδια στιγμή από άλλο ρόλο.</p>
+      <div class="sc-h">Χρήσιμα</div><div class="try">PIN για όλους: 1234. Το «+30′ χρόνος» προχωρά το ρολόι για να δεις καθυστερήσεις. Το «Από την αρχή» μηδενίζει τα πάντα.</div>
+      <button class="btn btn-coral" style="margin-top:16px" data-a="tour">${ic('play_arrow', 'fill')}Ξενάγηση βήμα-βήμα</button>
+      <button class="btn btn-line goto-dev" data-a="toDevice">${ic('arrow_downward')}Στη συσκευή</button>`;
+  }
+  $('#controls').innerHTML = `<div class="seg" style="flex:0 0 auto"><button class="${S.device === 'tablet' ? 'on' : ''}" data-a="dev" data-v="tablet">${ic('tablet')} Tablet</button><button class="${S.device === 'phone' ? 'on' : ''}" data-a="dev" data-v="phone">${ic('smartphone')} Κινητό</button></div>
+    <span class="clock">${ic('schedule')}${DAYS[2]} ${fmt(D.now)}</span>
+    <button class="ctl" data-a="time">${ic('fast_forward')}+30′ χρόνος</button>
+    <button class="ctl" data-a="lock">${ic('lock')}Κλείδωμα</button>
+    <button class="ctl" data-a="reset">${ic('restart_alt')}Από την αρχή</button>`;
+  $('#device').className = 'device ' + S.device;
+  renderApp();
+}
+
+/* ================= print ================= */
+function openPrint() {
+  const p = pat(ui.pid); const os = D.orders.filter(o => o.pid === p.id); const v = D.vitals[p.id] || {};
+  const slots = ['07', '09', '11', '13', '15', '17', '19', '21', '23', '01', '03', '05'];
+  const rows = [['temp', 'Θερμοκρασία'], ['hr', 'HR'], ['rr', 'RR'], ['glu', 'Γλυκόζη'], ['food', 'Φαγητό'], ['urine', 'Ούρηση'], ['stool', 'Αφόδευση'], ['vomit', 'Έμετος']];
+  $('#paper').innerHTML = `<div class="ph"><div><h1>Φύλλο νοσηλείας · ${esc(p.name)}</h1><div>Athens Vet Clinic · Γλυφάδα</div></div><div style="text-align:right">Ημέρα ${p.day} · ${DAYS[2]} ${fmt(D.now)}<br>Εκτύπωση: ${esc(me().short)}</div></div>
+    <div class="grid2"><div><b>ID:</b> ${esc(p.vid)}</div><div><b>Κλουβί:</b> ${p.cage}</div><div><b>Είδος:</b> ${esc(p.species)}, ${esc(p.breed)}, ${esc(p.sex)}, ${esc(p.age)}</div><div><b>Βάρος:</b> ${num(p.w)} kg · RER ${Math.round(30 * p.w + 70)} kcal</div>
+    <div><b>Διάγνωση:</b> ${esc(p.dx)}</div><div><b>Αλλεργίες:</b> ${esc(p.allergy || 'Καμία')}</div><div><b>Υπεύθυνος:</b> ${esc(user(p.doctor).name)}</div><div><b>Ιδιοκτήτης:</b> ${esc(p.owner)}, ${esc(p.phone)}</div></div>
+    <h4>Φάρμακα και θεραπεία</h4><table><tr><th>Φάρμακο</th><th>Δόση</th><th>Οδός</th><th>Συχνότητα</th><th>Ημέρες</th><th>Κατάσταση</th></tr>
+    ${os.map(o => `<tr><td>${esc(o.drug)}</td><td>${esc(o.dose)}</td><td>${esc(o.route)}</td><td>${o.kind === 'fluid' ? 'συνεχής' : 'κάθε ' + o.freq + ' ώρες'}</td><td>Ημ. ${o.from}–${o.from + o.days - 1}</td><td>${o.status === 'active' ? 'Ενεργή' : o.status === 'changed' ? 'Άλλαξε' : 'Σταμάτησε'}</td></tr>`).join('')}</table>
+    <h4>Ζωτικά σημεία</h4><table><tr><th></th>${slots.map(s => `<th>${s}</th>`).join('')}</tr>${rows.map(([k, l]) => `<tr><td><b>${l}</b></td>${slots.map(s => `<td>${esc(v[k]?.[s] ?? '')}</td>`).join('')}</tr>`).join('')}</table>
+    <h4>Σχόλια</h4><table><tr><th style="width:70px">Ώρα</th><th>Σχόλιο</th><th style="width:110px">Υπογραφή</th></tr>${p.comments.map(c => `<tr><td>${fmt(c.at)}</td><td>${esc(c.t)}</td><td>${esc(user(c.by).short)}</td></tr>`).join('') || '<tr><td colspan="3">—</td></tr>'}</table>`;
+  $('#print-modal').classList.add('on');
+}
+/* ================= actions ================= */
+let lastUndo = null;
+function closeSheet() { ui.sheet = null; }
+function loginAs(uid) { ui.user = uid; ui.screen = 'app'; ui.pinFor = null; ui.pin = ''; ui.pinErr = ''; ui.pid = null; ui.tab = tabsFor(me().role)[0]; ui.admin = 'dash'; ui.sheet = null; }
+function replaceOrder(old, data, origin) {
+  const p = pat(old.pid);
+  old.status = 'changed'; old.stoppedDay = p.day;
+  D.tasks = D.tasks.filter(t => !(t.order === old.id && t.status === 'pending' && t.time > D.now));
+  const o = Object.assign({}, old, data, { id: 'o' + (++D.seq), from: p.day, status: 'active', origin, stoppedDay: undefined });
+  old.replacedBy = o.id; D.orders.push(o); return [o, makeTasksForOrder(o)];
+}
+const A = {
+  home() { S.view = 'home'; renderPage(); window.scrollTo(0, 0); },
+  roles() { document.getElementById('roles').scrollIntoView({ behavior: 'smooth' }); },
+  tour() { S.view = 'tour'; S.mode = 'tour'; goStep(0); },
+  play(d) { S.view = 'tour'; S.mode = 'play'; S.device = 'tablet'; ui.screen = 'login'; ui.user = null; ui.pin = ''; ui.pinErr = ''; ui.sheet = null; ui.pinFor = d.u || null; renderPage(); window.scrollTo(0, 0); },
+  next() { if (S.step === STEPS.length - 1) { A.home(); return; } goStep(S.step + 1); },
+  prev() { goStep(S.step - 1); },
+  jump(d) { goStep(+d.i); },
+  toDevice() { $('#stage').scrollIntoView({ behavior: 'smooth', block: 'start' }); },
+  dev(d) { S.device = d.v; renderPage(); },
+  time() { D.now += 30; tick(); ui.toast = { t: `Το ρολόι πήγε ${fmt(D.now)}`, icon: 'fast_forward' }; clearTimeout(toastTimer); toastTimer = setTimeout(() => { ui.toast = null; renderApp(); }, 2600); renderPage(); },
+  lock() { ui.screen = 'login'; ui.pinFor = null; ui.pin = ''; ui.pinErr = ''; ui.sheet = null; renderApp(); },
+  reset() { D = fresh(); const keep = { screen: ui.screen, user: ui.user }; ui = freshUI(); seedNotifs(); if (S.mode === 'tour') STEPS[S.step].go(); else Object.assign(ui, keep); renderPage(); },
+  /* login */
+  face(d) { ui.pinFor = d.u; ui.pin = ''; ui.pinErr = ''; },
+  pinBack() { ui.pinFor = null; ui.pin = ''; ui.pinErr = ''; },
+  pin(d) { if (ui.pin.length >= 4) return; ui.pin += d.k; ui.pinErr = ''; if (ui.pin.length === 4) { if (ui.pin === '1234') { loginAs(ui.pinFor); toast(`Καλώς ήρθες, ${me().short}`, 'waving_hand'); } else { ui.pin = ''; ui.pinErr = 'Λάθος PIN. Μετά από 5 λάθη κλειδώνει για λίγα λεπτά.'; } } },
+  pinDel() { ui.pin = ui.pin.slice(0, -1); },
+  pinFill() { ui.pin = '1234'; loginAs(ui.pinFor); toast(`Καλώς ήρθες, ${me().short}`, 'waving_hand'); },
+  userMenu() { ui.sheet = { type: 'userMenu' }; },
+  logout() { ui.sheet = null; ui.screen = 'login'; ui.pinFor = null; ui.pin = ''; },
+  /* nav */
+  tab(d) { ui.tab = d.t; ui.pid = null; if (d.t === 'now' && ui.slot == null) ui.slot = 14 * 60; },
+  slot(d) { ui.slot = d.s === 'late' ? 'late' : +d.s; },
+  filter(d) { ui.filter = d.f; },
+  openP(d) { ui.pid = d.p; ui.ptab = 'over'; ui.comment = ''; },
+  closeP() { ui.pid = null; },
+  ptab(d) { ui.ptab = d.k; },
+  alertsAll(d) { ui.alertsAll = d.v === '1'; },
+  adminSeg(d) { ui.admin = d.k; },
+  closeSheet: closeSheet,
+  /* now */
+  tick(d) {
+    const t = D.tasks.find(x => x.id === d.id); if (!t || !canClinical()) return;
+    if (t.status === 'done') { toast(`Έγινε ήδη από ${user(t.by).short} στις ${fmt(t.at)}`, 'info'); return; }
+    if (t.input === 'number') { ui.sheet = { type: 'value', id: t.id, v: '' }; return; }
+    if (CHOICES[t.input]) { ui.sheet = { type: 'choice', id: t.id }; return; }
+    const prev = JSON.stringify(t); record(t, ''); lastUndo = { id: t.id, prev };
+    toast(`${pat(t.pid).name} · ${t.title}: έγινε, ${me().short} ${fmt(D.now)}`, 'check_circle', true);
+  },
+  undo() { if (!lastUndo) return; const i = D.tasks.findIndex(x => x.id === lastUndo.id); if (i > -1) D.tasks[i] = JSON.parse(lastUndo.prev); lastUndo = null; ui.toast = null; },
+  key(d) { const s = ui.sheet; if (d.k === 'del') s.v = s.v.slice(0, -1); else if (d.k === ',') { if (!s.v.includes(',')) s.v += s.v ? ',' : '0,'; } else if (s.v.length < 5) s.v += d.k; },
+  saveValue() {
+    const s = ui.sheet, t = D.tasks.find(x => x.id === s.id), v = parseFloat((s.v || '').replace(',', '.'));
+    if (isNaN(v)) { toast('Γράψε μια τιμή πρώτα.', 'error'); return; }
+    record(t, `${num(v)} ${t.unit}`, v); closeSheet(); toast(`${pat(t.pid).name} · ${t.title}: ${num(v)} ${t.unit}`, 'check_circle');
+  },
+  saveChoice(d) { const t = D.tasks.find(x => x.id === ui.sheet.id); const l = CHOICES[t.input].find(c => c[0] === d.v)[1]; record(t, l, d.v); closeSheet(); toast(`${pat(t.pid).name} · ${t.title}: ${l}`, 'check_circle'); },
+  notdoneSheet(d) { ui.sheet = { type: 'notdone', id: d.id, f: { r: '' } }; },
+  pick(d) { ui.sheet.f[d.k] = isNaN(d.v) || d.v === '' || ['pid', 'doctor', 'route', 'how', 'r', 'when', 'kind', 'sp', 'proto'].includes(d.k) ? d.v : +d.v; },
+  fstep(d) { const f = ui.sheet.f; f[d.k] = Math.max(d.k === 'w' ? 0.5 : 1, Math.round((f[d.k] + parseFloat(d.d)) * 10) / 10); },
+  toggleF(d) { ui.sheet.f[d.k] = !ui.sheet.f[d.k]; },
+  saveNotDone() { const s = ui.sheet; if (!s.f.r) { toast('Διάλεξε αιτία.', 'error'); return; } const t = D.tasks.find(x => x.id === s.id); notDone(t, s.f.r); closeSheet(); toast(`Καταχωρήθηκε. Ειδοποιήθηκε ο ${user(pat(t.pid).doctor).short}.`, 'do_not_disturb_on'); },
+  /* patients */
+  admitSheet() { ui.sheet = { type: 'admit', f: { name: 'Όσκαρ', vid: 'VCP-20455', sp: 'dog', breed: 'Γαλλικό μπουλντόγκ', w: 11.5, allergy: '', dx: 'Μετεγχειρητικά, βραχυκεφαλικό σύνδρομο', cage: 6, doctor: 'u1', owner: 'Νίκη Αθανασίου', phone: '69xx xxx 640', o247: true, proto: 'postop' } }; },
+  saveAdmit() {
+    const f = ui.sheet.f; if (!f.name.trim()) { toast('Γράψε όνομα.', 'error'); return; }
+    const p = { id: 'p' + (++D.seq), name: f.name.trim(), sp: f.sp, species: f.sp === 'cat' ? 'Γάτα' : 'Σκύλος', breed: f.breed, sex: '—', age: '—', w: f.w, cage: f.cage, day: 1, vid: f.vid, dx: f.dx, allergy: f.allergy, doctor: f.doctor, admitted: DAYS[2] + ' ' + fmt(D.now), catheter: '—', owner: f.owner, phone: f.phone, o247: f.o247, lastContact: D.now, refused: 0, diarrhea: false, lastUrine: D.now, status: 'in', comments: [], contacts: [{ at: D.now, by: me().id, how: 'Από κοντά', t: 'Εισαγωγή, ενημέρωση ιδιοκτήτη.' }] };
+    D.patients.push(p); D.feed[p.id] = 'Ορίζεται από τον γιατρό'; D.vplan[p.id] = 'Θερμοκρασία, HR, RR κάθε 4 ώρες';
+    let c = 0; const add = (drug, dose, route, freq, days, tol, note) => { const o = { id: 'o' + (++D.seq), pid: p.id, kind: 'med', drug, dose, route, freq, from: 1, days, tol, note, by: me().id, status: 'active', origin: 'πρωτόκολλο' }; D.orders.push(o); c += makeTasksForOrder(o); };
+    if (f.proto === 'postop') { add('Μεθαδόνη', '0,2 mg/kg', 'IV', 6, 2, 30, ''); add('Μελοξικάμη', '0,1 mg/kg', 'PO', 24, 3, 60, 'Με φαγητό'); }
+    if (f.proto === 'gastro') { add('Μαροπιτάντη', '1 mg/kg', 'SC', 24, 2, 60, ''); add('Ομεπραζόλη', '1 mg/kg', 'IV', 24, 3, 60, ''); }
+    D.tasks.push({ id: 't' + (++D.tseq), pid: p.id, type: 'vital', title: 'Θερμοκρασία', detail: 'Ελάχιστος κανόνας για όλα τα ζώα', time: 22 * 60, tol: D.settings.tolMed, input: 'number', unit: '°C', vital: 'temp', status: 'pending', by: '', at: 0, value: '', stat: false, note: '', min: true, order: '' }); c++;
+    closeSheet(); ui.pid = p.id; ui.ptab = 'orders'; toast(`${p.name}: εισαγωγή στο κλουβί ${p.cage}. Δημιουργήθηκαν ${c} εργασίες.`, 'pets');
+  },
+  orderSheet(d) {
+    const p = pat(ui.pid);
+    if (d.r) { const o = D.orders.find(x => x.id === d.r); ui.sheet = { type: 'order', replace: o.id, f: { drug: o.drug, dose: o.dose, route: o.route, freq: o.freq || 24, days: o.days, tol: o.tol, note: o.note } }; }
+    else ui.sheet = { type: 'order', f: { drug: 'Μαροπιτάντη', dose: '1 mg/kg (' + num(Math.round(p.w * 10) / 10) + ' mg)', route: 'SC', freq: 24, days: 3, tol: 60, note: '' } };
+  },
+  saveOrder() {
+    const s = ui.sheet, f = s.f, p = pat(ui.pid); if (!f.drug.trim()) { toast('Γράψε φάρμακο.', 'error'); return; }
+    let c;
+    if (s.replace) { const old = D.orders.find(x => x.id === s.replace); [, c] = replaceOrder(old, { drug: f.drug, dose: f.dose, route: f.route, freq: f.freq, days: f.days, tol: f.tol, note: f.note, by: me().id }, 'αλλαγή της προηγούμενης'); }
+    else { const o = { id: 'o' + (++D.seq), pid: p.id, kind: 'med', drug: f.drug, dose: f.dose, route: f.route, freq: f.freq, from: p.day, days: f.days, tol: f.tol, note: f.note, by: me().id, status: 'active' }; D.orders.push(o); c = makeTasksForOrder(o); }
+    closeSheet(); toast(`Αποθηκεύτηκε. ${c} νέες εργασίες στο «Τώρα» μέχρι αύριο το πρωί.`, 'event_available');
+  },
+  stopOrder(d) { const o = D.orders.find(x => x.id === d.o), p = pat(o.pid); o.status = 'stopped'; o.stoppedDay = p.day; D.tasks = D.tasks.filter(t => !(t.order === o.id && t.status === 'pending' && t.time > D.now)); toast(`${o.drug}: σταμάτησε. Οι επόμενες δόσεις αφαιρέθηκαν.`, 'stop_circle'); },
+  proposeSheet(d) { const o = D.orders.find(x => x.id === d.o); ui.sheet = { type: 'propose', o: o.id, f: { freq: o.freq === 8 ? 12 : o.freq, t: 'Είναι πολύ ήρεμη, πόνος 0/4 στις δύο τελευταίες μετρήσεις.' } }; },
+  sendPropose() {
+    const s = ui.sheet, o = D.orders.find(x => x.id === s.o), p = pat(o.pid), u = me();
+    addN({ to: [p.doctor], lv: 'doctor', kind: 'approve', pid: p.id, order: o.id, prop: { freq: s.f.freq, by: u.id, t: s.f.t }, title: `Πρόταση αλλαγής: ${p.name} · ${o.drug}`, body: `${u.short}: κάθε ${s.f.freq} ώρες αντί για ${o.freq}. «${s.f.t}»`, actions: [['approve', 'Εγκρίνω'], ['reject', 'Απορρίπτω']] });
+    closeSheet(); toast(`Στάλθηκε στον ${user(p.doctor).short} για έγκριση.`, 'forward_to_inbox');
+  },
+  cageSheet() { ui.sheet = { type: 'cage' }; },
+  setCage(d) { const p = pat(ui.pid); p.cage = +d.v; p.comments.push({ at: D.now, by: me().id, t: `Μετακίνηση στο κλουβί ${p.cage}.` }); closeSheet(); toast(`${p.name}: κλουβί ${p.cage}`, 'door_sliding'); },
+  dischargeSheet() { ui.sheet = { type: 'discharge' }; },
+  saveDischarge() { const p = pat(ui.pid); p.status = 'out'; p.outAt = D.now; p.outBy = me().id; D.tasks = D.tasks.filter(t => !(t.pid === p.id && t.status === 'pending')); D.notifs.forEach(n => { if (n.pid === p.id) n.done = true; }); closeSheet(); ui.pid = null; toast(`${p.name}: εξιτήριο. Η καρτέλα μένει στο ιστορικό.`, 'logout'); },
+  addComment() { const t = ui.comment.trim(); if (!t) return; pat(ui.pid).comments.push({ at: D.now, by: me().id, t }); ui.comment = ''; },
+  contactSheet() { ui.sheet = { type: 'contact', pid: ui.pid, f: { how: 'Τηλέφωνο', t: 'Ενημέρωση για την πορεία. Ο ιδιοκτήτης ευχαρίστησε.' } }; },
+  saveContact() {
+    const s = ui.sheet, p = pat(s.pid);
+    p.contacts.push({ at: D.now, by: me().id, how: s.f.how, t: s.f.t }); p.lastContact = D.now; p.ownerN = false;
+    D.notifs.forEach(n => { if (n.pid === p.id && (n.kind === 'call' || n.kind === 'owner')) n.done = true; });
+    D.todos.forEach(d => { if (d.pid === p.id && d.kind === 'owner' && d.status === 'open') Object.assign(d, { status: 'done', doneBy: me().id, doneAt: D.now }); });
+    closeSheet(); toast(`Καταγράφηκε. Το 24ωρο ξεκινά από τώρα.`, 'call');
+  },
+  print() { openPrint(); },
+  closePrint() { $('#print-modal').classList.remove('on'); },
+  doPrint() { try { window.print(); } catch (e) { } },
+  /* todo */
+  todoDoneSheet(d) { ui.sheet = { type: 'todoDone', d: d.d, f: { result: d.d === 'd1' ? '412 μmol/L, καλή ρύθμιση' : '', file: true } }; },
+  saveTodoDone() {
+    const s = ui.sheet, d = D.todos.find(x => x.id === s.d);
+    Object.assign(d, { status: 'done', doneBy: me().id, doneAt: D.now, result: s.f.result || '', file: s.f.file && d.kind === 'exam' ? `IDEXX_${d.title.split(',')[0].replace(/\s+/g, '_')}.pdf` : '' });
+    if (d.kind === 'exam' && d.pid) { const p = pat(d.pid); addN({ to: [p.doctor], lv: 'doctor', kind: 'info', pid: p.id, title: `Αποτέλεσμα: ${p.name} · ${d.title}`, body: (d.result || 'Χωρίς σχόλιο') + (d.file ? ' · συνημμένο αρχείο IDEXX' : ''), actions: [['seen', 'Το είδα'], ['goto', 'Καρτέλα']] }); }
+    if (d.kind === 'owner' && d.pid) { const p = pat(d.pid); p.lastContact = D.now; }
+    closeSheet(); toast(d.kind === 'exam' ? 'Ολοκληρώθηκε. Ειδοποιήθηκε ο υπεύθυνος γιατρός.' : 'Ολοκληρώθηκε.', 'task_alt');
+  },
+  todoNewSheet() { ui.sheet = { type: 'todoNew', f: { title: '', pid: '', when: 'today', kind: 'exam' } }; },
+  saveTodoNew() { const f = ui.sheet.f; if (!f.title.trim()) { toast('Γράψε τι πρέπει να γίνει.', 'error'); return; } D.todos.unshift({ id: 'd' + (++D.seq), pid: f.pid, title: f.title.trim(), kind: f.kind, when: f.when, time: f.when === 'none' ? 0 : D.now + 60, by: me().id, status: 'open' }); closeSheet(); toast('Προστέθηκε στο To-do.', 'add_task'); },
+  /* notifications */
+  nact(d) {
+    const n = D.notifs.find(x => x.id === d.n); if (!n) return; const p = pat(n.pid);
+    const x = d.x;
+    if (x === 'seen') { n.done = true; toast('Σημειώθηκε ως ολοκληρωμένη.', 'done_all'); }
+    else if (x === 'goto') { if (n.kind === 'late') { ui.tab = 'now'; ui.slot = 'late'; ui.pid = null; } else { ui.tab = 'patients'; ui.pid = n.pid; ui.ptab = n.kind === 'rule' ? 'vitals' : 'over'; } }
+    else if (x === 'extend') { const o = D.orders.find(y => y.id === n.order); o.days += 2; n.done = true; makeTasksForOrder(o); toast(`${o.drug}: συνεχίζει 2 ημέρες ακόμα (ως Ημ. ${o.from + o.days - 1}).`, 'event_repeat'); }
+    else if (x === 'end') { const o = D.orders.find(y => y.id === n.order); o.status = 'stopped'; o.stoppedDay = p.day; n.done = true; toast(`${o.drug}: τέλος αγωγής.`, 'stop_circle'); }
+    else if (x === 'change') { n.done = true; ui.tab = 'patients'; ui.pid = n.pid; ui.ptab = 'orders'; A.orderSheet({ r: n.order }); }
+    else if (x === 'approve') { const o = D.orders.find(y => y.id === n.order); const [no] = replaceOrder(o, { freq: n.prop.freq, by: me().id }, `πρόταση ${user(n.prop.by).short}, έγκριση ${me().short}`); n.done = true;
+      addN({ to: ['nurse'], lv: 'nurse', kind: 'info', pid: p.id, title: `Εγκρίθηκε: ${p.name} · ${o.drug} κάθε ${no.freq} ώρες`, body: `Από ${me().short}. Οι εργασίες στο «Τώρα» ενημερώθηκαν.`, actions: [['seen', 'Το είδα']] });
+      toast(`Εγκρίθηκε. ${o.drug} κάθε ${no.freq} ώρες από σήμερα.`, 'check_circle'); }
+    else if (x === 'reject') { n.done = true; addN({ to: ['nurse'], lv: 'nurse', kind: 'info', pid: p.id, title: `Δεν εγκρίθηκε: ${p.name} · αλλαγή εντολής`, body: `Από ${me().short}. Η εντολή μένει ως έχει.`, actions: [['seen', 'Το είδα']] }); toast('Απορρίφθηκε. Ενημερώθηκε η νοσηλεία.', 'cancel'); }
+    else if (x === 'call') { ui.sheet = { type: 'contact', pid: n.pid, f: { how: 'Τηλέφωνο', t: 'Ενημέρωση για την πορεία.' } }; }
+  },
+  /* admin */
+  ruleOn(d) { const r = rule(d.r); r.on = !r.on; },
+  ruleStep(d) { const r = rule(d.r); const v = Math.round((r[d.f] + parseFloat(d.d)) * 10) / 10; r[d.f] = Math.max(d.f === 'val' ? 1 : 30, v); if (d.r === 'owner') D.patients.forEach(p => p.ownerN = false); tick(); },
+  setTol(d) { const nv = +d.v, ov = D.settings.tolMed; D.settings.tolMed = nv; D.tasks.forEach(t => { if (t.status === 'pending' && !t.stat && t.tol === ov) t.tol = nv; }); tick(); toast(`Προεπιλεγμένη ανοχή: ${tolLabel(nv)}`, 'tune'); },
+  setExam(d) { D.settings.tolExam = +d.v; },
+  setExp(d) { D.settings.expiry = d.v; },
+  userOn(d) { const u = user(d.u); if (u.id === ui.user) { toast('Δεν απενεργοποιείς τον εαυτό σου.', 'error'); return; } u.active = !u.active; toast(`${u.name}: ${u.active ? 'ενεργός' : 'ανενεργός, δεν εμφανίζεται στη σύνδεση'}`, 'manage_accounts'); },
+  export() { toast('Στο demo δεν κατεβαίνει αρχείο. Στην εφαρμογή βγαίνει Excel ή PDF.', 'download'); }
+};
+
+/* ================= events ================= */
+const PAGE_ACTS = ['home', 'roles', 'tour', 'play', 'next', 'prev', 'jump', 'toDevice', 'dev', 'time', 'reset', 'print', 'closePrint', 'doPrint'];
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-a]'); if (!el) return;
+  if (el.dataset.self && e.target !== el) return;
+  const a = el.dataset.a; if (!A[a]) return;
+  e.preventDefault();
+  A[a](el.dataset);
+  if (!PAGE_ACTS.includes(a)) renderApp();
+});
+document.addEventListener('input', e => {
+  const k = e.target.dataset.in; if (!k) return;
+  if (k.startsWith('f.')) { ui.sheet.f[k.slice(2)] = e.target.value; return; }
+  if (k === 'comment') { ui.comment = e.target.value; return; }
+  if (k === 'search') { ui.search = e.target.value; renderApp(); const i = $('#screen input[data-in="search"]'); if (i) { i.focus(); i.setSelectionRange(i.value.length, i.value.length); } }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { if ($('#print-modal').classList.contains('on')) A.closePrint(); else if (ui.sheet) { closeSheet(); renderApp(); } }
+  if (e.key === 'Enter' && e.target.dataset?.in === 'comment') { A.addComment(); renderApp(); }
+});
+
+/* ================= init ================= */
+D = fresh(); ui = freshUI(); seedNotifs(); renderPage();
+(function iconsReady() {
+  const ok = () => document.documentElement.classList.add('ms-ready');
+  try { document.fonts.load('24px "Material Symbols Rounded"', 'home').then(f => { if (f && f.length) ok(); }).catch(() => {}); document.fonts.ready.then(() => { if (document.fonts.check('24px "Material Symbols Rounded"', 'home')) ok(); }); } catch (e) { }
+})();
+</script>
+</body>
+</html>
